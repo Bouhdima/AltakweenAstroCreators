@@ -28,6 +28,9 @@
 
 </head>
 
+
+
+
 <body class="index-page">
 
   <header id="header" class="header d-flex align-items-center sticky-top">
@@ -43,33 +46,208 @@
         <ul>
           <li><a href="#hero" class="active">Home</a></li>
           <li><a href="#about">About</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#features">Features</a></li>
-          <li><a href="#pricing">Pricing</a></li>
-          <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-            <ul>
-              <li><a href="#">Dropdown 1</a></li>
-              <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-                <ul>
-                  <li><a href="#">Deep Dropdown 1</a></li>
-                  <li><a href="#">Deep Dropdown 2</a></li>
-                  <li><a href="#">Deep Dropdown 3</a></li>
-                  <li><a href="#">Deep Dropdown 4</a></li>
-                  <li><a href="#">Deep Dropdown 5</a></li>
-                </ul>
-              </li>
-              <li><a href="#">Dropdown 2</a></li>
-              <li><a href="#">Dropdown 3</a></li>
-              <li><a href="#">Dropdown 4</a></li>
-            </ul>
-          </li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="#features">Stories</a></li>
+          <li><a href="#services">sounds</a></li>
+
+          <li><a href="#tabs">Video AND sounds</a></li>
+          <li><a href="#Games">Games</a></li>
+                    <li><a href="#contact">Contact</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
 
     </div>
   </header>
+<!-- ===== Interactive Factors Floating Menu ===== -->
+<div id="factor-menu-wrapper">
+  <!-- Blue side button -->
+  <button id="factor-toggle" class="btn shadow-lg position-fixed"
+    style="
+      top: 160px; /* 10cm (~100px) down from top menu */
+      left: 0;
+      z-index: 1100;
+      border-radius: 0 50% 50% 0;
+      width: 35px;
+      height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      transition: transform 0.5s ease, top 0.5s ease;
+      background: rgba(0,123,255,0.3);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255,255,255,0.2);
+      color: #fff;
+    ">
+    ⚙
+  </button>
+
+  <!-- Sidebar menu (factor buttons) -->
+  <div id="factor-top-menu"
+    class="position-fixed start-0 p-2 rounded-4 shadow d-flex flex-column gap-2"
+    style="
+      width:230px;
+      z-index:1050;
+      background: rgba(255,255,255,0.15);
+      backdrop-filter: blur(12px);
+      border-left: 3px solid rgba(255,255,255,0.2);
+      transform: translateX(0);
+      transition: transform 0.5s ease, top 0.5s ease;
+      top: 160px; /* align with button */
+      cursor: pointer;
+    ">
+    
+    <div class="factor-item d-flex justify-content-between align-items-center">
+      <button class="factor-btn w-100 text-start" data-factor="solar">☀️ Solar Activity</button>
+      <span class="factor-percent">90%</span>
+    </div>
+    <div class="factor-item d-flex justify-content-between align-items-center">
+      <button class="factor-btn w-100 text-start" data-factor="geomagnetic">⚡ Geomagnetic Activity</button>
+      <span class="factor-percent">70%</span>
+    </div>
+    <div class="factor-item d-flex justify-content-between align-items-center">
+      <button class="factor-btn w-100 text-start" data-factor="gps">🛰️ GPS & Satellites</button>
+      <span class="factor-percent">50%</span>
+    </div>
+    <div class="factor-item d-flex justify-content-between align-items-center">
+      <button class="factor-btn w-100 text-start" data-factor="aurora">✨ Auroras</button>
+      <span class="factor-percent">30%</span>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Styles ===== -->
+<style>
+.factor-btn {
+  border: none;
+  padding: 8px 14px;
+  border-radius: 10px;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: left;
+  font-size: 0.9rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  background: rgba(0,0,0,0.25);
+  backdrop-filter: blur(4px);
+}
+.factor-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+}
+.factor-btn.active {
+  border: 2px solid #fff;
+}
+.factor-percent {
+  font-weight: bold;
+  margin-left: 6px;
+  color: #fff;
+  font-size: 0.85rem;
+  min-width: 35px;
+  text-align: right;
+}
+body, header, footer, .section, .container {
+  transition: background-color 1s, color 1s;
+}
+</style>
+
+<!-- ===== Script ===== -->
+<script>
+const factors = {
+  solar: { bgColor:"#e63946", percent:90 },
+  geomagnetic: { bgColor:"#f4a261", percent:70 },
+  gps: { bgColor:"#a8dadc", percent:50 },
+  aurora: { bgColor:"#457b9d", percent:30 }
+};
+
+// Default/original colors (programmed)
+const defaultColors = {
+  body: "#ffffff",
+  text: "#111"
+};
+
+const factorKeys = Object.keys(factors);
+let currentIndex = 0;
+let autoSwitchInterval;
+let autoSwitchActive = false;
+let preSwitchColor = {...defaultColors}; // store color before automatic switching
+
+// Elements
+const buttons = document.querySelectorAll(".factor-btn");
+const percentSpans = document.querySelectorAll(".factor-percent");
+const toggleBtn = document.getElementById("factor-toggle");
+const menu = document.getElementById("factor-top-menu");
+
+// Initialize buttons
+buttons.forEach((btn,i) => {
+  const factor = btn.dataset.factor;
+  btn.style.backgroundColor = factors[factor].bgColor;
+  percentSpans[i].textContent = factors[factor].percent + "%";
+  btn.addEventListener("click", () => {
+    // Store the color before starting auto-switch
+    if(!autoSwitchActive) {
+      preSwitchColor.body = document.body.style.backgroundColor;
+      preSwitchColor.text = document.body.style.color;
+      startAutoSwitch();
+    }
+    switchFactor(factor);
+  });
+});
+
+// Function to switch factor color
+function switchFactor(factorName){
+  const color = factors[factorName].bgColor;
+  document.body.style.backgroundColor = color;
+  document.body.style.color = "#fff";
+  document.querySelectorAll("header, footer, section, .section, .container, .footer").forEach(el => {
+    el.style.backgroundColor = color;
+    el.style.color = "#fff";
+  });
+  buttons.forEach(b => b.classList.remove("active"));
+  document.querySelector(`.factor-btn[data-factor='${factorName}']`).classList.add("active");
+}
+
+// Automatic color switching
+function startAutoSwitch(){
+  autoSwitchActive = true;
+  autoSwitchInterval = setInterval(() => {
+    if(!autoSwitchActive) return;
+    currentIndex = (currentIndex + 1) % factorKeys.length;
+    switchFactor(factorKeys[currentIndex]);
+  }, 4000);
+}
+
+// Clicking on the sidebar (background) stops switching and restores pre-switch color
+menu.addEventListener("click", (e) => {
+  if(e.target === menu){
+    autoSwitchActive = false;
+    clearInterval(autoSwitchInterval);
+    document.body.style.backgroundColor = preSwitchColor.body;
+    document.body.style.color = preSwitchColor.text;
+    document.querySelectorAll("header, footer, section, .section, .container, .footer").forEach(el => {
+      el.style.backgroundColor = preSwitchColor.body;
+      el.style.color = preSwitchColor.text;
+    });
+    buttons.forEach(b => b.classList.remove("active"));
+  }
+});
+
+// Slide the button and sidebar left on blue button click
+toggleBtn.addEventListener("click", () => {
+  toggleBtn.style.transform = `translateX(-60px)`; 
+  menu.style.transform = `translateX(-250px)`; 
+  setTimeout(() => {
+    toggleBtn.style.display = "none";
+    menu.style.display = "none";
+  }, 500); 
+});
+
+// Initialize with default colors
+document.body.style.backgroundColor = defaultColors.body;
+document.body.style.color = defaultColors.text;
+</script>
+
 
   <main class="main">
 
@@ -101,176 +279,111 @@
         </div>
       </div>
 
-      <!-- Tabs Section -->
-<div class="container mt-4" data-aos="fade-up">
-  <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Services</h2>
-        <div><span>Check Our</span> <span class="description-title">Services</span></div>
-      </div><!-- End Section Title -->
-  <!-- Nav tabs -->
-   
-  <ul class="nav nav-tabs" id="serviceTabs" role="tablist">
-    <li class="nav-item" role="presentation">
-      <button class="nav-link active" id="overview-tab" data-bs-toggle="tab" data-bs-target="#overview" type="button" role="tab">Overview</button>
-    </li>
-    <li class="nav-item" role="presentation">
-      <button class="nav-link" id="features-tab" data-bs-toggle="tab" data-bs-target="#features-tab-pane" type="button" role="tab">Features</button>
-    </li>
-    <li class="nav-item" role="presentation">
-      <button class="nav-link" id="faq-tab" data-bs-toggle="tab" data-bs-target="#faq" type="button" role="tab">FAQ</button>
-    </li>
-    <li class="nav-item" role="presentation">
-      <button class="nav-link" id="resources-tab" data-bs-toggle="tab" data-bs-target="#resources" type="button" role="tab">Resources</button>
-    </li>
-  </ul>
+        
+    </section>
+    <!-- /Hero Section -->
 
-  <!-- Tab panes -->
-  <div class="tab-content p-4 border border-top-0 rounded-bottom">
-    <!-- Overview Tab -->
-    <div class="tab-pane fade show active" id="overview" role="tabpanel" aria-labelledby="overview-tab">
-      <img src="assets/img/services.jpg" alt="" class="img-fluid services-img mb-3">
-      <h3>Temporibus et in vero dicta aut eius lidero plastis...</h3>
-      <p>Blanditiis voluptate odit ex error ea sed officiis deserunt. Cupiditate non consequatur et doloremque consequuntur...</p>
-      <ul>
-        <li><i class="bi bi-check-circle"></i> Aut eum totam accusantium voluptatem.</li>
-        <li><i class="bi bi-check-circle"></i> Assumenda et porro nisi nihil nesciunt voluptatibus.</li>
-        <li><i class="bi bi-check-circle"></i> Ullamco laboris nisi ut aliquip ex ea</li>
-      </ul>
-      <figcaption>Listen to the T-Rex:</figcaption>
-  <audio controls src="assets\sounds\sound_1.mp3"></audio>
-  <a href="assets\sounds\sound_1.mp3"> Download audio </a>
-</figure>
-    </div>
+<!-- /About Section -->
+<section id="tabs" class="tabs-section section py-5 bg-light">
+  <div class="container section-title text-center mb-5" data-aos="fade-up">
+    <h2>Services</h2>
+    <div><span>Check Our</span> <span class="description-title">Services</span></div>
+  </div>
 
-    <!-- Features Tab -->
-    <div class="tab-pane fade" id="features-tab-pane" role="tabpanel" aria-labelledby="features-tab">
-      <h3>Key Features</h3>
-      <p>Highlight specific features of your services here. You can reuse content from "Services List" or "Download Catalog".</p>
-      <ul>
-        <li>📂 Easy downloads</li>
-        <li>⚡ Fast performance</li>
-        <li>🎨 Modern design</li>
-      </ul>
-    </div>
+  <div class="container" data-aos="fade-up">
+    <!-- Nav tabs -->
+    <ul class="nav nav-tabs justify-content-center mb-4" id="serviceTabs" role="tablist">
+      <li class="nav-item" role="presentation">
+        <button class="nav-link active" id="overview-tab" data-bs-toggle="tab" data-bs-target="#overview" type="button" role="tab">Elementary School </button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="features-tab" data-bs-toggle="tab" data-bs-target="#features-tab-pane" type="button" role="tab">Seconday School</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="faq-tab" data-bs-toggle="tab" data-bs-target="#faq" type="button" role="tab">High School</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="resources-tab" data-bs-toggle="tab" data-bs-target="#resources" type="button" role="tab">Resources</button>
+      </li>
+    </ul>
 
-    <!-- FAQ Tab -->
-    <div class="tab-pane fade" id="faq" role="tabpanel" aria-labelledby="faq-tab">
-      <h3>Frequently Asked Questions</h3>
-      <p>Here you can add common questions and answers.</p>
-      <ul>
-        <li><strong>Q:</strong> How can I contact support?<br><strong>A:</strong> Use the contact form or call us at +1 5589 55488 55.</li>
-        <li><strong>Q:</strong> Do you provide custom solutions?<br><strong>A:</strong> Yes, tailored to your business needs.</li>
-      </ul>
-    </div>
+    <!-- Tab panes -->
+    <div class="tab-content p-4 border border-top-0 rounded-bottom bg-white shadow-sm">
+      <!-- Overview Tab -->
+      <div class="tab-pane fade show active" id="overview" role="tabpanel" aria-labelledby="overview-tab">
+        <div class="row">
+          <div class="col-md-12 mb-3 text-center">
+            <h4 class="mb-2">Overview Video</h4>
+            <video controls class="w-100 rounded mb-2" style="height:500px; object-fit:cover;">
+              <source src="assets/videos/video1.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <a href="assets/videos/video1.mp4" download class="btn btn-primary mb-2">Download Video</a>
+            <p class="text-center mb-0">Overview of our services.</p>
+          </div>
+        </div>
+      </div>
 
-    <!-- Resources Tab -->
-    <div class="tab-pane fade" id="resources" role="tabpanel" aria-labelledby="resources-tab">
-      <h3>Resources</h3>
-      <p>Here you can provide helpful links, downloads, or related materials.</p>
-      <ul>
-        <li><a href="#"><i class="bi bi-filetype-pdf"></i> Catalog PDF</a></li>
-        <li><a href="#"><i class="bi bi-file-earmark-word"></i> Catalog DOC</a></li>
-        <li><a href="#"><i class="bi bi-link-45deg"></i> External Resource Link</a></li>
-      </ul>
+      <!-- Features Tab -->
+      <div class="tab-pane fade" id="features-tab-pane" role="tabpanel" aria-labelledby="features-tab">
+        <div class="row">
+          <div class="col-md-12 mb-3 text-center">
+            <h4 class="mb-2">Features Video</h4>
+            <video controls class="w-100 rounded mb-2" style="height:500px; object-fit:cover;">
+              <source src="assets/videos/video2.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <a href="assets/videos/video2.mp4" download class="btn btn-primary mb-2">Download Video</a>
+            <p class="text-center mb-0">Key features highlighted.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ Tab -->
+      <div class="tab-pane fade" id="faq" role="tabpanel" aria-labelledby="faq-tab">
+        <div class="row">
+          <div class="col-md-12 mb-3 text-center">
+            <h4 class="mb-2">FAQ Video</h4>
+            <video controls class="w-100 rounded mb-2" style="height:500px; object-fit:cover;">
+              <source src="assets/videos/video3.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <a href="assets/videos/video3.mp4" download class="btn btn-primary mb-2">Download Video</a>
+            <p class="text-center mb-0">Frequently asked questions.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Resources Tab -->
+      <div class="tab-pane fade" id="resources" role="tabpanel" aria-labelledby="resources-tab">
+        <div class="row">
+          <div class="col-md-12 mb-3 text-center">
+            <h4 class="mb-2">Resources Video</h4>
+            <video controls class="w-100 rounded mb-2" style="height:500px; object-fit:cover;">
+              <source src="assets/videos/video4.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <a href="assets/videos/video4.mp4" download class="btn btn-primary mb-2">Download Video</a>
+            <p class="text-center mb-0">Helpful resources and materials.</p>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-</div>
+</section>
 
-        <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <!-- <h2>Services</h2> -->
-        <div><span>Check Our</span> <span class="description-title">Services</span></div>
-      </div><!-- End Section Title -->
-        <div class="container position-relative">
-          <div class="row gy-4 mt-3">
-            <div class="col-xl-3 col-md-6">
-              <div class="icon-box">
-                <div class="icon"><i class="bi bi-easel"></i></div>
-                <h4 class="title">
-                  <a href="" class="stretched-link">Lorem Ipsum</a>
-                </h4>
-                <figure>
-  
-              </div>
-            </div><!--End Icon Box -->
+<!-- Optional: Smooth scroll for header menu links -->
+<script>
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      target.scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+</script>
 
-            <div class="col-xl-3 col-md-6">
-              <div class="icon-box">
-                <div class="icon"><i class="bi bi-gem"></i></div>
-                <h4 class="title"><a href="" class="stretched-link">Sed ut perspiciatis</a></h4>
-              </div>
-            </div><!--End Icon Box -->
 
-            <div class="col-xl-3 col-md-6">
-              <div class="icon-box">
-                <div class="icon"><i class="bi bi-geo-alt"></i></div>
-                <h4 class="title"><a href="" class="stretched-link">Magni Dolores</a></h4>
-              </div>
-            </div><!--End Icon Box -->
-
-            <div class="col-xl-3 col-md-6">
-              <div class="icon-box">
-                <div class="icon"><i class="bi bi-command"></i></div>
-                <h4 class="title"><a href="" class="stretched-link">Nemo Enim</a></h4>
-              </div>
-            </div><!--End Icon Box -->
-
-          </div>
-        </div>
-      </div>
-
-    </section><!-- /Hero Section -->
-
-    <!-- About Section -->
-    <section id="about" class="about section">
-<!-- Section Title -->
-      <!-- <div class="container section-title" data-aos="fade-up">
-        <h2>Services</h2>
-        <div><span>Check Our</span> <span class="description-title">Services</span></div>
-      </div>End Section Title -->
-      <div class="container">
-
-        <div class="row gy-4">
-
-          <div class="col-lg-6 content" data-aos="fade-up" data-aos-delay="100">
-            <p class="who-we-are">Who We Are</p>
-            <h3>Unleashing Potential with Creative Strategy</h3>
-            <p class="fst-italic">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-              magna aliqua.
-            </p>
-            <ul>
-              <li><i class="bi bi-check-circle"></i> <span>Ullamco laboris nisi ut aliquip ex ea commodo consequat.</span></li>
-              <li><i class="bi bi-check-circle"></i> <span>Duis aute irure dolor in reprehenderit in voluptate velit.</span></li>
-              <li><i class="bi bi-check-circle"></i> <span>Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.</span></li>
-            </ul>
-            <a href="#" class="read-more"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
-          </div>
-
-          <div class="col-lg-6 about-images" data-aos="fade-up" data-aos-delay="200">
-            <div class="row gy-4">
-              <div class="col-lg-6">
-                <img src="assets/img/about-company-1.jpg" class="img-fluid" alt="">
-              </div>
-              <div class="col-lg-6">
-                <div class="row gy-4">
-                  <div class="col-lg-12">
-                    <img src="assets/img/about-company-2.jpg" class="img-fluid" alt="">
-                  </div>
-                  <div class="col-lg-12">
-                    <img src="assets/img/about-company-3.jpg" class="img-fluid" alt="">
-                  </div>
-                </div>
-              </div>
-            </div>
-
-          </div>
-
-        </div>
-
-      </div>
-    </section><!-- /About Section -->
 
     <!-- Services Section -->
     <section id="services" class="services section">
@@ -367,80 +480,122 @@
     </section><!-- /Services Section -->
 
     <!-- Features Section -->
-    <section id="features" class="features section light-background">
-       <div class="container section-title" data-aos="fade-up">
-        <h2>Our Story</h2>
-        <div><span>Read it as</span> <span class="description-title">Book</span></div>
-      </div><!-- End Section Title -->
-<a href="https://online.flippingbook.com/view/54371863/" class="fbo-embed" data-fbo-id="7216744fb7" data-fbo-ratio="3:2" data-fbo-lightbox="yes" data-fbo-width="100%" data-fbo-height="auto" data-fbo-version="1" style="max-width: 100%">Story word version</a><script async defer src="https://online.flippingbook.com/EmbedScriptUrl.aspx?m=redir&hid=54371863"></script>
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Features</h2>
-        <div><span>Check Our</span> <span class="description-title">Features</span></div>
-      </div><!-- End Section Title -->
+   <section id="features" class="features section light-background">
 
-      <div class="container">
+  <div class="container section-title" data-aos="fade-up">
+    <h2>Our Story</h2>
+    <div><span>Read it as</span> <span class="description-title">Book</span></div>
+  </div><!-- End Section Title -->
 
-        <div class="row gy-5 justify-content-between">
+  <!-- Switcher Buttons -->
+  <div style="text-align:center; margin-bottom:1rem;">
+    <button onclick="showBook('elementary')" style="margin:0 10px;padding:8px 16px;border:none;border-radius:6px;background:#1b4fd8;color:#fff;cursor:pointer;">Elementary School Level</button>
+    <button onclick="showBook('word')" style="margin:0 10px;padding:8px 16px;border:none;border-radius:6px;background:#ff6600;color:#fff;cursor:pointer;">Story Word Version</button>
+    <button onclick="showBook('tab3')" style="margin:0 10px;padding:8px 16px;border:none;border-radius:6px;background:#28a745;color:#fff;cursor:pointer;">Book 3</button>
+    <button onclick="showBook('tab4')" style="margin:0 10px;padding:8px 16px;border:none;border-radius:6px;background:#6f42c1;color:#fff;cursor:pointer;">Book 4</button>
+    <button onclick="showBook('tab5')" style="margin:0 10px;padding:8px 16px;border:none;border-radius:6px;background:#fd7e14;color:#fff;cursor:pointer;">Book 5</button>
+  </div>
 
-          <div class="col-xl-5" data-aos="zoom-out" data-aos-delay="100">
-            <img src="assets/assets/img//template/eStartup/features.svg" class="img-fluid" alt="">
+  <!-- Book Embed Containers -->
+  <div id="book-elementary">
+    <a href="https://online.flippingbook.com/view/454353348/" class="fbo-embed" 
+       data-fbo-id="767fd0e62a" data-fbo-ratio="3:2" data-fbo-lightbox="yes" 
+       data-fbo-width="100%" data-fbo-height="auto" data-fbo-version="1" 
+       style="max-width: 100%">Elementary English Story</a>
+    <script async defer src="https://online.flippingbook.com/EmbedScriptUrl.aspx?m=redir&hid=454353348"></script>
+  </div>
+
+  <div id="book-word" style="display:none;">
+<a href="https://online.flippingbook.com/view/454859738/" class="fbo-embed" data-fbo-id="d56f7ff4e0" data-fbo-ratio="3:2" data-fbo-lightbox="yes" data-fbo-width="100%" data-fbo-height="auto" data-fbo-version="1" style="max-width: 100%">Middle School Level</a><script async defer src="https://online.flippingbook.com/EmbedScriptUrl.aspx?m=redir&hid=454859738"></script>
+    <script async defer src="https://online.flippingbook.com/EmbedScriptUrl.aspx?m=redir&hid=54371863"></script>
+  </div>
+
+  <div id="tab3" style="display:none;">
+<a href="https://online.flippingbook.com/view/454859738/" class="fbo-embed" data-fbo-id="d56f7ff4e0" data-fbo-ratio="3:2" data-fbo-lightbox="yes" data-fbo-width="100%" data-fbo-height="auto" data-fbo-version="1" style="max-width: 100%">Middle School Level</a><script async defer src="https://online.flippingbook.com/EmbedScriptUrl.aspx?m=redir&hid=454859738"></script>  </div>
+
+  <div id="tab4" style="display:none;">
+    <a href="https://online.flippingbook.com/view/454859738/" class="fbo-embed" data-fbo-id="d56f7ff4e0" data-fbo-ratio="3:2" data-fbo-lightbox="yes" data-fbo-width="100%" data-fbo-height="auto" data-fbo-version="1" style="max-width: 100%">Middle School Level</a><script async defer src="https://online.flippingbook.com/EmbedScriptUrl.aspx?m=redir&hid=454859738"></script>
+  </div>
+
+  <div id="tab5" style="display:none;">
+   <a href="https://online.flippingbook.com/view/454859738/" class="fbo-embed" data-fbo-id="d56f7ff4e0" data-fbo-ratio="3:2" data-fbo-lightbox="yes" data-fbo-width="100%" data-fbo-height="auto" data-fbo-version="1" style="max-width: 100%">Middle School Level</a><script async defer src="https://online.flippingbook.com/EmbedScriptUrl.aspx?m=redir&hid=454859738"></script>ss
+  </div>
+
+</section>
+
+<script>
+  function showBook(type) {
+    const books = ['elementary', 'word', 'tab3', 'tab4', 'tab5'];
+    books.forEach(id => {
+      document.getElementById('book-' + id === 'book-elementary' ? 'elementary' : id).style.display = 'none';
+    });
+    document.getElementById(type).style.display = 'block';
+  }
+</script>
+
+
+  
+  <section id="Games" class="features section light-background">
+  <div class="container">
+    <!-- Section Title -->
+    <div class="section-title text-center" data-aos="fade-up">
+      <h2>Games</h2>
+      <div><span>Elementary</span> <span class="description-title">Level</span></div>
+    </div>
+
+    <!-- Tabs -->
+    <ul class="nav nav-tabs justify-content-center mt-4" id="gamesTab" role="tablist">
+      <li class="nav-item" role="presentation">
+        <button class="nav-link active" id="tab1-tab" data-bs-toggle="tab" data-bs-target="#tab1" type="button" role="tab" aria-controls="tab1" aria-selected="true">Game 1</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="tab2-tab" data-bs-toggle="tab" data-bs-target="#tab2" type="button" role="tab" aria-controls="tab2" aria-selected="false">Game 2</button>
+      </li>
+    </ul>
+
+    <!-- Tab Content -->
+    <div class="tab-content mt-4" id="gamesTabContent">
+      <!-- Tab 1 -->
+      <div class="tab-pane fade show active" id="tab1" role="tabpanel" aria-labelledby="tab1-tab">
+        <div style="width: 100%;">
+          <div style="position: relative; padding-bottom: 56.25%; padding-top: 0; height: 0;">
+            <iframe title="Galaxy Quiz" frameborder="0" width="1200" height="675" 
+                    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" 
+                    src="https://view.genially.com/68e1504cb3cda70d0af00fba" type="text/html" 
+                    allowscriptaccess="always" allowfullscreen="true" scrolling="yes" allownetworking="all">
+            </iframe>
           </div>
-
-          <div class="col-xl-6 d-flex">
-            <div class="row align-self-center gy-4">
-
-              <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
-                <div class="feature-box d-flex align-items-center">
-                  <i class="bi bi-check"></i>
-                  <h3>Eos aspernatur rem</h3>
-                </div>
-              </div><!-- End Feature Item -->
-
-              <div class="col-md-6" data-aos="fade-up" data-aos-delay="300">
-                <div class="feature-box d-flex align-items-center">
-                  <i class="bi bi-check"></i>
-                  <h3>Facilis neque ipsa</h3>
-                </div>
-              </div><!-- End Feature Item -->
-
-              <div class="col-md-6" data-aos="fade-up" data-aos-delay="400">
-                <div class="feature-box d-flex align-items-center">
-                  <i class="bi bi-check"></i>
-                  <h3>Volup amet volupt</h3>
-                </div>
-              </div><!-- End Feature Item -->
-
-              <div class="col-md-6" data-aos="fade-up" data-aos-delay="500">
-                <div class="feature-box d-flex align-items-center">
-                  <i class="bi bi-check"></i>
-                  <h3>Rerum omnis sint</h3>
-                </div>
-              </div><!-- End Feature Item -->
-
-              <div class="col-md-6" data-aos="fade-up" data-aos-delay="600">
-                <div class="feature-box d-flex align-items-center">
-                  <i class="bi bi-check"></i>
-                  <h3>Alias possimus</h3>
-                </div>
-              </div><!-- End Feature Item -->
-
-              <div class="col-md-6" data-aos="fade-up" data-aos-delay="700">
-                <div class="feature-box d-flex align-items-center">
-                  <i class="bi bi-check"></i>
-                  <h3>Repellendus molli</h3>
-                  
-                </div>
-              </div><!-- End Feature Item -->
-
-            </div>
-          </div>
-
         </div>
-
       </div>
 
-    </section><!-- /Features Section -->
+      <!-- Tab 2 -->
+      <div class="tab-pane fade" id="tab2" role="tabpanel" aria-labelledby="tab2-tab">
+        <div style="width: 100%;">
+          <div style="position: relative; padding-bottom: 56.25%; padding-top: 0; height: 0;">
+            <iframe title="Galaxy Quiz" frameborder="0" width="1200" height="675" 
+                    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" 
+                    src="https://view.genially.com/68e1504cb3cda70d0af00fba" type="text/html" 
+                    allowscriptaccess="always" allowfullscreen="true" scrolling="yes" allownetworking="all">
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Include Bootstrap JS (required for tabs) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<!-- /Features Section -->
+
+
+<script>
+  function showBook(type) {
+    document.getElementById("book-elementary").style.display = (type === 'elementary') ? 'block' : 'none';
+    document.getElementById("book-word").style.display = (type === 'word') ? 'block' : 'none';
+  }
+</script>
+
 
     <!-- Pricing Section -->
     <section id="pricing" class="pricing section">

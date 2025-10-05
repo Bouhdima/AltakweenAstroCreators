@@ -1,1188 +1,994 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Index - eStartup Bootstrap Template</title>
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
 
-<head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Index - eStartup Bootstrap Template</title>
-  <meta name="description" content="">
-  <meta name="keywords" content="">
+    <!-- Favicons -->
+    <link href="assets/img/favicon.png" rel="icon" />
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
 
-  <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
 
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com" rel="preconnect">
-  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <!-- Vendor CSS Files -->
+    <link
+      href="assets/vendor/bootstrap/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="assets/vendor/bootstrap-icons/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet" />
+    <link
+      href="assets/vendor/glightbox/css/glightbox.min.css"
+      rel="stylesheet"
+    />
 
-  <!-- Vendor CSS Files -->
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <!-- Main CSS File -->
+    <link href="assets/css/main.css" rel="stylesheet" />
+  </head>
 
-  <!-- Main CSS File -->
-  <link href="assets/css/main.css" rel="stylesheet">
+  <body class="index-page">
+    <header id="header" class="header d-flex align-items-center sticky-top">
+      <div
+        class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between"
+      >
+        <a href="index.html" class="logo d-flex align-items-center">
+          <!-- Uncomment the line below if you also wish to use an image logo -->
+          <!-- <img src="assets/img/logo3.png alt=""> -->
+          <img src="assets/img/logo3.png" alt="" />
+          <h1 class="sitename"><span>F</span>lara</h1>
+        </a>
+        <nav id="navmenu" class="navmenu">
+          <ul>
+            <li><a href="#hero" class="active">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#tabs">Stories Videos</a></li>
+            <li><a href="#services">Stories sounds</a></li>
+            <li><a href="#features">Stories Books</a></li>
+            <li><a href="#Games">Games</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+          <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+        </nav>
+      </div>
+    </header>
+    <!-- ===== Interactive Factors Floating Menu ===== -->
+    <div id="factor-menu-wrapper">
+      <!-- Blue side button -->
+      <button
+        id="factor-toggle"
+        class="btn shadow-lg position-fixed"
+        style="
+          top: 160px; /* 10cm (~100px) down from top menu */
+          left: 0;
+          z-index: 1100;
+          border-radius: 0 50% 50% 0;
+          width: 35px;
+          height: 70px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 1.2rem;
+          transition: transform 0.5s ease, top 0.5s ease;
+          background: rgba(0, 123, 255, 0.3);
+          backdrop-filter: blur(8px);
+          border: 1px solid rgba(255, 255, 255, 0.2);
+          color: #fff;
+        "
+      >
+        ⚙
+      </button>
 
-</head>
-
-
-
-
-<body class="index-page">
-
-  <header id="header" class="header d-flex align-items-center sticky-top">
-    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
-
-      <a href="index.html" class="logo d-flex align-items-center">
-        <!-- Uncomment the line below if you also wish to use an image logo -->
-        <!-- <img src="assets/img/logo3.png alt=""> -->
-         <img src="assets/img/logo3.png" alt="">
-        <h1 class="sitename"> <span>F</span>lara</h1>
-      </a>
-      <nav id="navmenu" class="navmenu">
-        <ul>
-          <li><a href="#hero" class="active">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#features">Stories</a></li>
-          <li><a href="#services">sounds</a></li>
-
-          <li><a href="#tabs">Video AND sounds</a></li>
-          <li><a href="#Games">Games</a></li>
-                    <li><a href="#contact">Contact</a></li>
-        </ul>
-        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
-      </nav>
-
-    </div>
-  </header>
-<!-- ===== Interactive Factors Floating Menu ===== -->
-<div id="factor-menu-wrapper">
-  <!-- Blue side button -->
-  <button id="factor-toggle" class="btn shadow-lg position-fixed"
-    style="
-      top: 160px; /* 10cm (~100px) down from top menu */
-      left: 0;
-      z-index: 1100;
-      border-radius: 0 50% 50% 0;
-      width: 35px;
-      height: 70px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.2rem;
-      transition: transform 0.5s ease, top 0.5s ease;
-      background: rgba(0,123,255,0.3);
-      backdrop-filter: blur(8px);
-      border: 1px solid rgba(255,255,255,0.2);
-      color: #fff;
-    ">
-    ⚙
-  </button>
-
-  <!-- Sidebar menu (factor buttons) -->
-  <div id="factor-top-menu"
-    class="position-fixed start-0 p-2 rounded-4 shadow d-flex flex-column gap-2"
-    style="
-      width:230px;
-      z-index:1050;
-      background: rgba(255,255,255,0.15);
-      backdrop-filter: blur(12px);
-      border-left: 3px solid rgba(255,255,255,0.2);
-      transform: translateX(0);
-      transition: transform 0.5s ease, top 0.5s ease;
-      top: 160px; /* align with button */
-      cursor: pointer;
-    ">
-    
-    <div class="factor-item d-flex justify-content-between align-items-center">
-      <button class="factor-btn w-100 text-start" data-factor="solar">☀️ Solar Activity</button>
-      <span class="factor-percent">90%</span>
-    </div>
-    <div class="factor-item d-flex justify-content-between align-items-center">
-      <button class="factor-btn w-100 text-start" data-factor="geomagnetic">⚡ Geomagnetic Activity</button>
-      <span class="factor-percent">70%</span>
-    </div>
-    <div class="factor-item d-flex justify-content-between align-items-center">
-      <button class="factor-btn w-100 text-start" data-factor="gps">🛰️ GPS & Satellites</button>
-      <span class="factor-percent">50%</span>
-    </div>
-    <div class="factor-item d-flex justify-content-between align-items-center">
-      <button class="factor-btn w-100 text-start" data-factor="aurora">✨ Auroras</button>
-      <span class="factor-percent">30%</span>
-    </div>
-  </div>
-</div>
-
-<!-- ===== Styles ===== -->
-<style>
-.factor-btn {
-  border: none;
-  padding: 8px 14px;
-  border-radius: 10px;
-  color: #fff;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  text-align: left;
-  font-size: 0.9rem;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
-  background: rgba(0,0,0,0.25);
-  backdrop-filter: blur(4px);
-}
-.factor-btn:hover {
-  transform: scale(1.05);
-  box-shadow: 0 4px 10px rgba(0,0,0,0.25);
-}
-.factor-btn.active {
-  border: 2px solid #fff;
-}
-.factor-percent {
-  font-weight: bold;
-  margin-left: 6px;
-  color: #fff;
-  font-size: 0.85rem;
-  min-width: 35px;
-  text-align: right;
-}
-body, header, footer, .section, .container {
-  transition: background-color 1s, color 1s;
-}
-</style>
-
-<!-- ===== Script ===== -->
-<script>
-const factors = {
-  solar: { bgColor:"#e63946", percent:90 },
-  geomagnetic: { bgColor:"#f4a261", percent:70 },
-  gps: { bgColor:"#a8dadc", percent:50 },
-  aurora: { bgColor:"#457b9d", percent:30 }
-};
-
-// Default/original colors (programmed)
-const defaultColors = {
-  body: "#ffffff",
-  text: "#111"
-};
-
-const factorKeys = Object.keys(factors);
-let currentIndex = 0;
-let autoSwitchInterval;
-let autoSwitchActive = false;
-let preSwitchColor = {...defaultColors}; // store color before automatic switching
-
-// Elements
-const buttons = document.querySelectorAll(".factor-btn");
-const percentSpans = document.querySelectorAll(".factor-percent");
-const toggleBtn = document.getElementById("factor-toggle");
-const menu = document.getElementById("factor-top-menu");
-
-// Initialize buttons
-buttons.forEach((btn,i) => {
-  const factor = btn.dataset.factor;
-  btn.style.backgroundColor = factors[factor].bgColor;
-  percentSpans[i].textContent = factors[factor].percent + "%";
-  btn.addEventListener("click", () => {
-    // Store the color before starting auto-switch
-    if(!autoSwitchActive) {
-      preSwitchColor.body = document.body.style.backgroundColor;
-      preSwitchColor.text = document.body.style.color;
-      startAutoSwitch();
-    }
-    switchFactor(factor);
-  });
-});
-
-// Function to switch factor color
-function switchFactor(factorName){
-  const color = factors[factorName].bgColor;
-  document.body.style.backgroundColor = color;
-  document.body.style.color = "#fff";
-  document.querySelectorAll("header, footer, section, .section, .container, .footer").forEach(el => {
-    el.style.backgroundColor = color;
-    el.style.color = "#fff";
-  });
-  buttons.forEach(b => b.classList.remove("active"));
-  document.querySelector(`.factor-btn[data-factor='${factorName}']`).classList.add("active");
-}
-
-// Automatic color switching
-function startAutoSwitch(){
-  autoSwitchActive = true;
-  autoSwitchInterval = setInterval(() => {
-    if(!autoSwitchActive) return;
-    currentIndex = (currentIndex + 1) % factorKeys.length;
-    switchFactor(factorKeys[currentIndex]);
-  }, 4000);
-}
-
-// Clicking on the sidebar (background) stops switching and restores pre-switch color
-menu.addEventListener("click", (e) => {
-  if(e.target === menu){
-    autoSwitchActive = false;
-    clearInterval(autoSwitchInterval);
-    document.body.style.backgroundColor = preSwitchColor.body;
-    document.body.style.color = preSwitchColor.text;
-    document.querySelectorAll("header, footer, section, .section, .container, .footer").forEach(el => {
-      el.style.backgroundColor = preSwitchColor.body;
-      el.style.color = preSwitchColor.text;
-    });
-    buttons.forEach(b => b.classList.remove("active"));
-  }
-});
-
-// Slide the button and sidebar left on blue button click
-toggleBtn.addEventListener("click", () => {
-  toggleBtn.style.transform = `translateX(-60px)`; 
-  menu.style.transform = `translateX(-250px)`; 
-  setTimeout(() => {
-    toggleBtn.style.display = "none";
-    menu.style.display = "none";
-  }, 500); 
-});
-
-// Initialize with default colors
-document.body.style.backgroundColor = defaultColors.body;
-document.body.style.color = defaultColors.text;
-</script>
-
-
-  <main class="main">
-
-    <!-- Hero Section -->
-    <section id="hero" class="hero section light-background">
-
-      <div class="container position-relative" data-aos="fade-up" data-aos-delay="100">
-        <div class="row gy-5">
-          <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center">
-            <!-- <h2>Flara</h2> -->
-             <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <!-- <h2>Services</h2> -->
-        <h2><span>Our Story</span> <span class="description-title">Flara</span></h2>
-      </div><!-- End Section Title -->
-            <p>Flara is our creative journey born from the NASA Space Apps Challenge, 
-            blending imagination, technology, and education to explore space and Earth’s systems. 
-            It reflects our vision of 
-             knowledge and innovation to inspire future generations.</p>
-            <div class="d-flex">
-              <a href="#about" class="btn-get-started">Get Started</a>
-              <a href="https://www.youtube.com/watch?v=Js08rFuWGWI" class="glightbox btn-watch-video d-flex align-items-center"><i class="bi bi-play-circle"></i><span>Watch story's video</span></a>
-            </div>
-          </div>
-          
-          <div class="col-lg-6 order-1 order-lg-2">
-            <img src="assets/img/hero31.png" class="img-fluid " alt="">
-          </div>
+      <!-- Sidebar menu (factor buttons) -->
+      <div
+        id="factor-top-menu"
+        class="position-fixed start-0 p-2 rounded-4 shadow d-flex flex-column gap-2"
+        style="
+          width: 230px;
+          z-index: 1050;
+          background: rgba(255, 255, 255, 0.15);
+          backdrop-filter: blur(12px);
+          border-left: 3px solid rgba(255, 255, 255, 0.2);
+          transform: translateX(0);
+          transition: transform 0.5s ease, top 0.5s ease;
+          top: 160px; /* align with button */
+          cursor: pointer;
+        "
+      >
+        <div
+          class="factor-item d-flex justify-content-between align-items-center"
+        >
+          <button class="factor-btn w-100 text-start" data-factor="solar">
+            ☀️ Solar Activity
+          </button>
+          <span class="factor-percent">90%</span>
+        </div>
+        <div
+          class="factor-item d-flex justify-content-between align-items-center"
+        >
+          <button class="factor-btn w-100 text-start" data-factor="geomagnetic">
+            ⚡ Geomagnetic Activity
+          </button>
+          <span class="factor-percent">70%</span>
+        </div>
+        <div
+          class="factor-item d-flex justify-content-between align-items-center"
+        >
+          <button class="factor-btn w-100 text-start" data-factor="gps">
+            🛰️ GPS & Satellites
+          </button>
+          <span class="factor-percent">50%</span>
+        </div>
+        <div
+          class="factor-item d-flex justify-content-between align-items-center"
+        >
+          <button class="factor-btn w-100 text-start" data-factor="aurora">
+            ✨ Auroras
+          </button>
+          <span class="factor-percent">30%</span>
         </div>
       </div>
+    </div>
 
-        
-    </section>
-    <!-- /Hero Section -->
+    <!-- ===== Styles ===== -->
+    <style>
+      .factor-btn {
+        border: none;
+        padding: 8px 14px;
+        border-radius: 10px;
+        color: #fff;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        text-align: left;
+        font-size: 0.9rem;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+        background: rgba(0, 0, 0, 0.25);
+        backdrop-filter: blur(4px);
+      }
+      .factor-btn:hover {
+        transform: scale(1.05);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+      }
+      .factor-btn.active {
+        border: 2px solid #fff;
+      }
+      .factor-percent {
+        font-weight: bold;
+        margin-left: 6px;
+        color: #fff;
+        font-size: 0.85rem;
+        min-width: 35px;
+        text-align: right;
+      }
+      body,
+      header,
+      footer,
+      .section,
+      .container {
+        transition: background-color 1s, color 1s;
+      }
+    </style>
 
-<!-- /About Section -->
-<section id="tabs" class="tabs-section section py-5 bg-light">
-  <div class="container section-title text-center mb-5" data-aos="fade-up">
-    <h2>Services</h2>
-    <div><span>Check Our</span> <span class="description-title">Services</span></div>
+    <!-- ===== Script ===== -->
+    <script>
+      const factors = {
+        solar: { bgColor: "#e63946", percent: 90 },
+        geomagnetic: { bgColor: "#f4a261", percent: 70 },
+        gps: { bgColor: "#a8dadc", percent: 50 },
+        aurora: { bgColor: "#457b9d", percent: 30 },
+      };
+
+      // Default/original colors (programmed)
+      const defaultColors = {
+        body: "#ffffff",
+        text: "#111",
+      };
+
+      const factorKeys = Object.keys(factors);
+      let currentIndex = 0;
+      let autoSwitchInterval;
+      let autoSwitchActive = false;
+      let preSwitchColor = { ...defaultColors }; // store color before automatic switching
+
+      // Elements
+      const buttons = document.querySelectorAll(".factor-btn");
+      const percentSpans = document.querySelectorAll(".factor-percent");
+      const toggleBtn = document.getElementById("factor-toggle");
+      const menu = document.getElementById("factor-top-menu");
+
+      // Initialize buttons
+      buttons.forEach((btn, i) => {
+        const factor = btn.dataset.factor;
+        btn.style.backgroundColor = factors[factor].bgColor;
+        percentSpans[i].textContent = factors[factor].percent + "%";
+        btn.addEventListener("click", () => {
+          // Store the color before starting auto-switch
+          if (!autoSwitchActive) {
+            preSwitchColor.body = document.body.style.backgroundColor;
+            preSwitchColor.text = document.body.style.color;
+            startAutoSwitch();
+          }
+          switchFactor(factor);
+        });
+      });
+
+      // Function to switch factor color
+      function switchFactor(factorName) {
+        const color = factors[factorName].bgColor;
+        document.body.style.backgroundColor = color;
+        document.body.style.color = "#fff";
+        document
+          .querySelectorAll(
+            "header, footer, section, .section, .container, .footer"
+          )
+          .forEach((el) => {
+            el.style.backgroundColor = color;
+            el.style.color = "#fff";
+          });
+        buttons.forEach((b) => b.classList.remove("active"));
+        document
+          .querySelector(`.factor-btn[data-factor='${factorName}']`)
+          .classList.add("active");
+      }
+
+      // Automatic color switching
+      function startAutoSwitch() {
+        autoSwitchActive = true;
+        autoSwitchInterval = setInterval(() => {
+          if (!autoSwitchActive) return;
+          currentIndex = (currentIndex + 1) % factorKeys.length;
+          switchFactor(factorKeys[currentIndex]);
+        }, 4000);
+      }
+
+      // Clicking on the sidebar (background) stops switching and restores pre-switch color
+      menu.addEventListener("click", (e) => {
+        if (e.target === menu) {
+          autoSwitchActive = false;
+          clearInterval(autoSwitchInterval);
+          document.body.style.backgroundColor = preSwitchColor.body;
+          document.body.style.color = preSwitchColor.text;
+          document
+            .querySelectorAll(
+              "header, footer, section, .section, .container, .footer"
+            )
+            .forEach((el) => {
+              el.style.backgroundColor = preSwitchColor.body;
+              el.style.color = preSwitchColor.text;
+            });
+          buttons.forEach((b) => b.classList.remove("active"));
+        }
+      });
+
+      // Slide the button and sidebar left on blue button click
+      toggleBtn.addEventListener("click", () => {
+        toggleBtn.style.transform = `translateX(-60px)`;
+        menu.style.transform = `translateX(-250px)`;
+        setTimeout(() => {
+          toggleBtn.style.display = "none";
+          menu.style.display = "none";
+        }, 500);
+      });
+
+      // Initialize with default colors
+      document.body.style.backgroundColor = defaultColors.body;
+      document.body.style.color = defaultColors.text;
+    </script>
+
+    <main class="main">
+      <!-- Home Section -->
+      <section id="hero" class="hero section light-background">
+        <div
+          class="container position-relative"
+          data-aos="fade-up"
+          data-aos-delay="100"
+        >
+          <div class="row gy-5">
+            <div
+              class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center"
+            >
+              <!-- <h2>Flara</h2> -->
+              <!-- Section Title -->
+              <div class="container section-title" data-aos="fade-up">
+                <!-- <h2>Services</h2> -->
+                <h2>
+                  <span>Our Story</span>
+                  <span class="description-title">Flara</span>
+                </h2>
+              </div>
+              <!-- End Section Title -->
+             <p class="fs-4 fw-semibold text-center text-dark lh-lg">
+              Flara is our <span class="text-primary fw-bold">creative journey</span> born from the 
+              <span class="fw-bold">NASA Space Apps Challenge</span>, blending imagination, technology, 
+              and education to explore <span class="fw-bold text-primary">space</span> and 
+              <span class="fw-bold text-primary">Earth’s systems</span>. It reflects our vision of 
+              <span class="fw-bold">knowledge</span> and <span class="fw-bold">innovation</span> to 
+              inspire future generations.
+  </p>
+              <div class="d-flex">
+                <a
+                  href="https://www.youtube.com/watch?v=oOXVZo7KikE"
+                  class="glightbox btn-watch-video d-flex align-items-center"
+                  ><i class="bi bi-play-circle"></i
+                  ><span>Watch story's video</span></a
+                >
+              </div>
+            </div>
+
+            <div class="col-lg-6 order-1 order-lg-2">
+              <img src="assets/img/hero31.png" class="img-fluid" alt="" />
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- /Home Section -->
+      <!-- About Section -->
+      <section id="about" class="about section">
+        <!-- Section Title -->
+        <div class="container section-title" data-aos="fade-up">
+          <h2>Let's See</h2>
+          <div>
+            <span>We and our </span>
+            <span class="description-title">Story</span>
+          </div>
+        </div>
+        <!-- End Section Title -->
+        <div class="container">
+          <div class="row gy-4">
+            <div
+              class="col-lg-6 content"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
+              <h3><p class="who-we-are">Who We Are</p></h3>
+              <!-- <h3>Unleashing Potential with Creative Strategy</h3> -->
+             <div class="p-4 bg-light rounded shadow-sm">
+  <p class="mb-2 fw-semibold text-primary">
+    I’m Flara, a solar flare bringing light and inspiration to learning.
+  </p>
+  <p class="mb-2">
+    Our <span class="fw-semibold">ICT advisor</span> has <span class="text-primary">20+ years</span> in <span class="fw-semibold">edtech</span>, specializing in <span class="fw-semibold">AI, STEM,</span> and <span class="fw-semibold">digital innovation</span>.
+  </p>
+  <p class="mb-2">
+    As a <span class="fw-semibold">science and ICT teacher</span>, they make learning creative, engaging, and meaningful.
+  </p>
+  <p class="mb-2">
+    Our <span class="fw-semibold">students in grades 8–10</span> are curious, motivated, and developing skills in <span class="fw-semibold">critical thinking, problem-solving,</span> and <span class="fw-semibold">teamwork</span>.
+  </p>
+  <p class="mb-0 fw-semibold text-secondary">
+    Together, we shine with knowledge and creativity.
+  </p>
+</div>
+
+              
+            </div>
+            <div
+              class="col-lg-6 about-images"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
+              <div class="row gy-4">
+                <div class="col-lg-6">
+                  <img
+                    src="assets/img/about-company-1.jpg"
+                    class="img-fluid"
+                    alt=""
+                  />
+                </div>
+                <div class="col-lg-6">
+                  <div class="row gy-4">
+                    <div class="col-lg-12">
+                      <img
+                        src="assets/img/about-company-2.jpg"
+                        class="img-fluid"
+                        alt=""
+                      />
+                    </div>
+                    <div class="col-lg-12">
+                      <img
+                        src="assets/img/about-company-3.jpg"
+                        class="img-fluid"
+                        alt=""
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- End About Section -->
+      <!-- Video Section -->
+     <section id="tabs" class="tabs-section section py-5 bg-light">
+  <div class="container section-title text-center mb-1" data-aos="fade-up">
+    <h2>Our Story</h2>
+    <div>
+      <span>Watch in your</span>
+      <span class="description-title">Level</span>
+    </div>
   </div>
-
-  <div class="container" data-aos="fade-up">
+ <div class="container" data-aos="fade-up">
     <!-- Nav tabs -->
     <ul class="nav nav-tabs justify-content-center mb-4" id="serviceTabs" role="tablist">
       <li class="nav-item" role="presentation">
-        <button class="nav-link active" id="overview-tab" data-bs-toggle="tab" data-bs-target="#overview" type="button" role="tab">Elementary School </button>
+        <button class="nav-link active" id="overview-tab" data-bs-toggle="tab" data-bs-target="#overview" type="button" role="tab">Elementary English</button>
       </li>
       <li class="nav-item" role="presentation">
-        <button class="nav-link" id="features-tab" data-bs-toggle="tab" data-bs-target="#features-tab-pane" type="button" role="tab">Seconday School</button>
+        <button class="nav-link" id="features-tab" data-bs-toggle="tab" data-bs-target="#features-tab-pane" type="button" role="tab"> Elementary Arabic</button>
       </li>
       <li class="nav-item" role="presentation">
-        <button class="nav-link" id="faq-tab" data-bs-toggle="tab" data-bs-target="#faq" type="button" role="tab">High School</button>
+        <button class="nav-link" id="faq-tab" data-bs-toggle="tab" data-bs-target="#faq" type="button" role="tab">Middle English</button>
       </li>
       <li class="nav-item" role="presentation">
-        <button class="nav-link" id="resources-tab" data-bs-toggle="tab" data-bs-target="#resources" type="button" role="tab">Resources</button>
+        <button class="nav-link" id="resources-tab" data-bs-toggle="tab" data-bs-target="#resources" type="button" role="tab">Middle Arabic</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="primary-tab" data-bs-toggle="tab" data-bs-target="#primary" type="button" role="tab">High English</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="middle-tab" data-bs-toggle="tab" data-bs-target="#middle" type="button" role="tab">High Arabic</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="advanced-tab" data-bs-toggle="tab" data-bs-target="#advanced" type="button" role="tab">Resources</button>
       </li>
     </ul>
 
     <!-- Tab panes -->
     <div class="tab-content p-4 border border-top-0 rounded-bottom bg-white shadow-sm">
-      <!-- Overview Tab -->
+
+      <style>
+        .video-square {
+          width: 70%;              /* Reduced by 30% */
+          aspect-ratio: 16 / 9;    /* standard video ratio */
+          border-radius: 0.5rem;
+          display: block;
+          margin: 0 auto;          /* center horizontally */
+        }
+      </style>
+
+      <!-- Template for all tabs -->
       <div class="tab-pane fade show active" id="overview" role="tabpanel" aria-labelledby="overview-tab">
-        <div class="row">
-          <div class="col-md-12 mb-3 text-center">
-            <h4 class="mb-2">Overview Video</h4>
-            <video controls class="w-100 rounded mb-2" style="height:500px; object-fit:cover;">
-              <source src="assets/videos/video1.mp4" type="video/mp4">
-              Your browser does not support the video tag.
-            </video>
-            <a href="assets/videos/video1.mp4" download class="btn btn-primary mb-2">Download Video</a>
-            <p class="text-center mb-0">Overview of our services.</p>
+        <div class="text-center mb-3">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/bl_Ov_tbzFI?si=43qE-F-pF1-Vgfwr" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          <div class="mt-2">
+            <a href="https://www.youtube.com/embed/bl_Ov_tbzFI?si=43qE-F-pF1-Vgfwr" target="_blank" class="btn btn-primary btn-lg">
+              <i class="bi bi-youtube me-2"></i> Watch Video on YouTube
+            </a>
           </div>
         </div>
       </div>
 
-      <!-- Features Tab -->
       <div class="tab-pane fade" id="features-tab-pane" role="tabpanel" aria-labelledby="features-tab">
-        <div class="row">
-          <div class="col-md-12 mb-3 text-center">
-            <h4 class="mb-2">Features Video</h4>
-            <video controls class="w-100 rounded mb-2" style="height:500px; object-fit:cover;">
-              <source src="assets/videos/video2.mp4" type="video/mp4">
-              Your browser does not support the video tag.
-            </video>
-            <a href="assets/videos/video2.mp4" download class="btn btn-primary mb-2">Download Video</a>
-            <p class="text-center mb-0">Key features highlighted.</p>
+        <div class="text-center mb-3">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/9BjaJXYoejs?si=e3Y0zBir0-mSj7dj" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>          <div class="mt-2">
+            <a href="https://www.youtube.com/embed/9BjaJXYoejs?si=e3Y0zBir0-mSj7dj" target="_blank" class="btn btn-primary btn-lg">
+              <i class="bi bi-youtube me-2"></i> Watch Video on YouTube
+            </a>
           </div>
         </div>
       </div>
 
-      <!-- FAQ Tab -->
       <div class="tab-pane fade" id="faq" role="tabpanel" aria-labelledby="faq-tab">
-        <div class="row">
-          <div class="col-md-12 mb-3 text-center">
-            <h4 class="mb-2">FAQ Video</h4>
-            <video controls class="w-100 rounded mb-2" style="height:500px; object-fit:cover;">
-              <source src="assets/videos/video3.mp4" type="video/mp4">
-              Your browser does not support the video tag.
-            </video>
-            <a href="assets/videos/video3.mp4" download class="btn btn-primary mb-2">Download Video</a>
-            <p class="text-center mb-0">Frequently asked questions.</p>
+        <div class="text-center mb-3">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/9BjaJXYoejs?si=e3Y0zBir0-mSj7dj" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>          <div class="mt-2">
+            <a href="https://www.youtube.com/embed/9BjaJXYoejs?si=e3Y0zBir0-mSj7dj" target="_blank" class="btn btn-primary btn-lg">
+              <i class="bi bi-youtube me-2"></i> Watch Video on YouTube
+            </a>
           </div>
         </div>
       </div>
 
-      <!-- Resources Tab -->
       <div class="tab-pane fade" id="resources" role="tabpanel" aria-labelledby="resources-tab">
-        <div class="row">
-          <div class="col-md-12 mb-3 text-center">
-            <h4 class="mb-2">Resources Video</h4>
-            <video controls class="w-100 rounded mb-2" style="height:500px; object-fit:cover;">
-              <source src="assets/videos/video4.mp4" type="video/mp4">
-              Your browser does not support the video tag.
-            </video>
-            <a href="assets/videos/video4.mp4" download class="btn btn-primary mb-2">Download Video</a>
-            <p class="text-center mb-0">Helpful resources and materials.</p>
+        <div class="text-center mb-3">
+          <video class="video-square" controls>
+            <source src="assets/videos/video4.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+
+      <div class="tab-pane fade" id="primary" role="tabpanel" aria-labelledby="primary-tab">
+        <div class="text-center mb-3">
+          <iframe class="video-square" src="https://www.youtube.com/embed/ZK2iVeoXRkI" title="Primary School Video" frameborder="0" allowfullscreen></iframe>
+          <div class="mt-2">
+            <a href="https://www.youtube.com/watch?v=ZK2iVeoXRkI" target="_blank" class="btn btn-primary btn-lg">
+              <i class="bi bi-youtube me-2"></i> Watch Video on YouTube
+            </a>
           </div>
         </div>
       </div>
+
+      <div class="tab-pane fade" id="middle" role="tabpanel" aria-labelledby="middle-tab">
+        <div class="text-center mb-3">
+          <iframe class="video-square" src="https://www.youtube.com/embed/ZK2iVeoXRkI" title="Middle School Video" frameborder="0" allowfullscreen></iframe>
+          <div class="mt-2">
+            <a href="https://www.youtube.com/watch?v=ZK2iVeoXRkI" target="_blank" class="btn btn-primary btn-lg">
+              <i class="bi bi-youtube me-2"></i> Watch Video on YouTube
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="tab-pane fade" id="advanced" role="tabpanel" aria-labelledby="advanced-tab">
+        <div class="text-center mb-3">
+          <iframe class="video-square" src="https://www.youtube.com/embed/ZK2iVeoXRkI" title="Advanced Level Video" frameborder="0" allowfullscreen></iframe>
+          <div class="mt-2">
+            <a href="https://www.youtube.com/watch?v=ZK2iVeoXRkI" target="_blank" class="btn btn-primary btn-lg">
+              <i class="bi bi-youtube me-2"></i> Watch Video on YouTube
+            </a>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
 
-<!-- Optional: Smooth scroll for header menu links -->
-<script>
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-      e.preventDefault();
-      const target = document.querySelector(this.getAttribute('href'));
-      target.scrollIntoView({ behavior: 'smooth' });
-    });
-  });
-</script>
+      <!--End  Video Section -->
 
-
-
-    <!-- Services Section -->
-    <section id="services" class="services section">
-
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Services</h2>
-        <div><span>Check Our</span> <span class="description-title">Services</span></div>
-      </div><!-- End Section Title -->
-
-      <div class="container">
-
-        <div class="row gy-4">
-
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-            <div class="service-item  position-relative">
-              <div class="icon">
-                <i class="bi bi-activity"></i>
-              </div>
-              <a href="service-details.html" class="stretched-link">
-                <h3>Nesciunt Mete</h3>
-              </a>
-              <p>Provident nihil minus qui consequatur non omnis maiores. Eos accusantium minus dolores iure perferendis tempore et consequatur.</p>
-            </div>
-          </div><!-- End Service Item -->
-
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-            <div class="service-item position-relative">
-              <div class="icon">
-                <i class="bi bi-broadcast"></i>
-              </div>
-              <a href="service-details.html" class="stretched-link">
-                <h3>Eosle Commodi</h3>
-              </a>
-              <p>Ut autem aut autem non a. Sint sint sit facilis nam iusto sint. Libero corrupti neque eum hic non ut nesciunt dolorem.</p>
-            </div>
-          </div><!-- End Service Item -->
-
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-            <div class="service-item position-relative">
-              <div class="icon">
-                <i class="bi bi-easel"></i>
-              </div>
-              <a href="service-details.html" class="stretched-link">
-                <h3>Ledo Markt</h3>
-              </a>
-              <p>Ut excepturi voluptatem nisi sed. Quidem fuga consequatur. Minus ea aut. Vel qui id voluptas adipisci eos earum corrupti.</p>
-            </div>
-          </div><!-- End Service Item -->
-
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
-            <div class="service-item position-relative">
-              <div class="icon">
-                <i class="bi bi-bounding-box-circles"></i>
-              </div>
-              <a href="service-details.html" class="stretched-link">
-                <h3>Asperiores Commodit</h3>
-              </a>
-              <p>Non et temporibus minus omnis sed dolor esse consequatur. Cupiditate sed error ea fuga sit provident adipisci neque.</p>
-              <a href="service-details.html" class="stretched-link"></a>
-            </div>
-          </div><!-- End Service Item -->
-
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
-            <div class="service-item position-relative">
-              <div class="icon">
-                <i class="bi bi-calendar4-week"></i>
-              </div>
-              <a href="service-details.html" class="stretched-link">
-                <h3>Velit Doloremque</h3>
-              </a>
-              <p>Cumque et suscipit saepe. Est maiores autem enim facilis ut aut ipsam corporis aut. Sed animi at autem alias eius labore.</p>
-              <a href="service-details.html" class="stretched-link"></a>
-            </div>
-          </div><!-- End Service Item -->
-
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
-            <div class="service-item position-relative">
-              <div class="icon">
-                <i class="bi bi-chat-square-text"></i>
-              </div>
-              <a href="service-details.html" class="stretched-link">
-                <h3>Dolori Architecto</h3>
-              </a>
-              <p>Hic molestias ea quibusdam eos. Fugiat enim doloremque aut neque non et debitis iure. Corrupti recusandae ducimus enim.</p>
-              <a href="service-details.html" class="stretched-link"></a>
-            </div>
-          </div><!-- End Service Item -->
-
-        </div>
-
-      </div>
-
-    </section><!-- /Services Section -->
-
-    <!-- Features Section -->
-   <section id="features" class="features section light-background">
-
+      <!-- Sounds Section -->
+      <section id="services" class="services section">
+  <!-- Section Title -->
   <div class="container section-title" data-aos="fade-up">
-    <h2>Our Story</h2>
-    <div><span>Read it as</span> <span class="description-title">Book</span></div>
-  </div><!-- End Section Title -->
-
-  <!-- Switcher Buttons -->
-  <div style="text-align:center; margin-bottom:1rem;">
-    <button onclick="showBook('elementary')" style="margin:0 10px;padding:8px 16px;border:none;border-radius:6px;background:#1b4fd8;color:#fff;cursor:pointer;">Elementary School Level</button>
-    <button onclick="showBook('word')" style="margin:0 10px;padding:8px 16px;border:none;border-radius:6px;background:#ff6600;color:#fff;cursor:pointer;">Story Word Version</button>
-    <button onclick="showBook('tab3')" style="margin:0 10px;padding:8px 16px;border:none;border-radius:6px;background:#28a745;color:#fff;cursor:pointer;">Book 3</button>
-    <button onclick="showBook('tab4')" style="margin:0 10px;padding:8px 16px;border:none;border-radius:6px;background:#6f42c1;color:#fff;cursor:pointer;">Book 4</button>
-    <button onclick="showBook('tab5')" style="margin:0 10px;padding:8px 16px;border:none;border-radius:6px;background:#fd7e14;color:#fff;cursor:pointer;">Book 5</button>
+    <h2>Listen to Our Story</h2>
+    <div>
+      <span>Choose your</span>
+      <span class="description-title">Level</span>
+    </div>
   </div>
+  <!-- End Section Title -->
 
-  <!-- Book Embed Containers -->
-  <div id="book-elementary">
-    <a href="https://online.flippingbook.com/view/454353348/" class="fbo-embed" 
-       data-fbo-id="767fd0e62a" data-fbo-ratio="3:2" data-fbo-lightbox="yes" 
-       data-fbo-width="100%" data-fbo-height="auto" data-fbo-version="1" 
-       style="max-width: 100%">Elementary English Story</a>
-    <script async defer src="https://online.flippingbook.com/EmbedScriptUrl.aspx?m=redir&hid=454353348"></script>
-  </div>
-
-  <div id="book-word" style="display:none;">
-<a href="https://online.flippingbook.com/view/454859738/" class="fbo-embed" data-fbo-id="d56f7ff4e0" data-fbo-ratio="3:2" data-fbo-lightbox="yes" data-fbo-width="100%" data-fbo-height="auto" data-fbo-version="1" style="max-width: 100%">Middle School Level</a><script async defer src="https://online.flippingbook.com/EmbedScriptUrl.aspx?m=redir&hid=454859738"></script>
-    <script async defer src="https://online.flippingbook.com/EmbedScriptUrl.aspx?m=redir&hid=54371863"></script>
-  </div>
-
-  <div id="tab3" style="display:none;">
-<a href="https://online.flippingbook.com/view/454859738/" class="fbo-embed" data-fbo-id="d56f7ff4e0" data-fbo-ratio="3:2" data-fbo-lightbox="yes" data-fbo-width="100%" data-fbo-height="auto" data-fbo-version="1" style="max-width: 100%">Middle School Level</a><script async defer src="https://online.flippingbook.com/EmbedScriptUrl.aspx?m=redir&hid=454859738"></script>  </div>
-
-  <div id="tab4" style="display:none;">
-    <a href="https://online.flippingbook.com/view/454859738/" class="fbo-embed" data-fbo-id="d56f7ff4e0" data-fbo-ratio="3:2" data-fbo-lightbox="yes" data-fbo-width="100%" data-fbo-height="auto" data-fbo-version="1" style="max-width: 100%">Middle School Level</a><script async defer src="https://online.flippingbook.com/EmbedScriptUrl.aspx?m=redir&hid=454859738"></script>
-  </div>
-
-  <div id="tab5" style="display:none;">
-   <a href="https://online.flippingbook.com/view/454859738/" class="fbo-embed" data-fbo-id="d56f7ff4e0" data-fbo-ratio="3:2" data-fbo-lightbox="yes" data-fbo-width="100%" data-fbo-height="auto" data-fbo-version="1" style="max-width: 100%">Middle School Level</a><script async defer src="https://online.flippingbook.com/EmbedScriptUrl.aspx?m=redir&hid=454859738"></script>ss
-  </div>
-
-</section>
-
-<script>
-  function showBook(type) {
-    const books = ['elementary', 'word', 'tab3', 'tab4', 'tab5'];
-    books.forEach(id => {
-      document.getElementById('book-' + id === 'book-elementary' ? 'elementary' : id).style.display = 'none';
-    });
-    document.getElementById(type).style.display = 'block';
-  }
-</script>
-
-
-  
-  <section id="Games" class="features section light-background">
   <div class="container">
-    <!-- Section Title -->
-    <div class="section-title text-center" data-aos="fade-up">
-      <h2>Games</h2>
-      <div><span>Elementary</span> <span class="description-title">Level</span></div>
+    <div class="row gy-2">
+
+      <!-- Sounds Item 1 -->
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+  <div class="service-item position-relative p-3 bg-light rounded shadow-sm text-center">
+    <!-- Sound Icon -->
+    <div class="icon mb-2">
+      <i class="bi bi-music-note-beamed fs-2"></i>
+    </div>
+    <h3>Elementary Arabic </h3>
+
+    <!-- Wave animation instead of paragraph -->
+    <div class="audio-wave mt-2 mb-2">
+      <div class="wave"></div>
+      <div class="wave"></div>
+      <div class="wave"></div>
+      <div class="wave"></div>
+      <div class="wave"></div>
     </div>
 
-    <!-- Tabs -->
-    <ul class="nav nav-tabs justify-content-center mt-4" id="gamesTab" role="tablist">
-      <li class="nav-item" role="presentation">
-        <button class="nav-link active" id="tab1-tab" data-bs-toggle="tab" data-bs-target="#tab1" type="button" role="tab" aria-controls="tab1" aria-selected="true">Game 1</button>
-      </li>
-      <li class="nav-item" role="presentation">
-        <button class="nav-link" id="tab2-tab" data-bs-toggle="tab" data-bs-target="#tab2" type="button" role="tab" aria-controls="tab2" aria-selected="false">Game 2</button>
-      </li>
-    </ul>
+    <!-- Audio Player -->
+    <audio id="audio1" controls>
+      <source src="assets/sounds/lementary-Video.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+  </div>
+</div>
 
-    <!-- Tab Content -->
-    <div class="tab-content mt-4" id="gamesTabContent">
-      <!-- Tab 1 -->
-      <div class="tab-pane fade show active" id="tab1" role="tabpanel" aria-labelledby="tab1-tab">
-        <div style="width: 100%;">
-          <div style="position: relative; padding-bottom: 56.25%; padding-top: 0; height: 0;">
-            <iframe title="Galaxy Quiz" frameborder="0" width="1200" height="675" 
-                    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" 
-                    src="https://view.genially.com/68e1504cb3cda70d0af00fba" type="text/html" 
-                    allowscriptaccess="always" allowfullscreen="true" scrolling="yes" allownetworking="all">
-            </iframe>
+<!-- CSS for wave animation -->
+<style>
+.audio-wave {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  height: 40px;
+  gap: 4px;
+  margin-bottom: 10px;
+}
+
+.audio-wave .wave {
+  width: 4px;
+  height: 100%;
+  background: #007bff;
+  animation: wave 1s infinite ease-in-out;
+}
+
+.audio-wave .wave:nth-child(1) { animation-delay: 0s; }
+.audio-wave .wave:nth-child(2) { animation-delay: 0.2s; }
+.audio-wave .wave:nth-child(3) { animation-delay: 0.4s; }
+.audio-wave .wave:nth-child(4) { animation-delay: 0.6s; }
+.audio-wave .wave:nth-child(5) { animation-delay: 0.8s; }
+
+@keyframes wave {
+  0%, 100% { transform: scaleY(0.3); }
+  50% { transform: scaleY(1); }
+}
+</style>
+
+
+<script>
+  // Set default volume using JavaScript (0.5 = 50%)
+  const audio1 = document.getElementById('audio1');
+  if(audio1) {
+    audio1.volume = 0.5;
+  }
+</script>
+
+
+
+      <!-- Sounds Item 2 -->
+<div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+  <div class="service-item position-relative p-3 bg-light rounded shadow-sm text-center">
+    <!-- Sound Icon -->
+    <div class="icon mb-2">
+      <i class="bi bi-music-note-beamed fs-2"></i>
+    </div>
+    <h3>Elementary English</h3>
+
+    <!-- Wave animation instead of paragraph -->
+    <div class="audio-wave mt-2 mb-2">
+      <div class="wave"></div>
+      <div class="wave"></div>
+      <div class="wave"></div>
+      <div class="wave"></div>
+      <div class="wave"></div>
+    </div>
+
+    <!-- Audio Player -->
+    <audio id="audio2" controls>
+      <source src="assets/sounds/lementary-Video.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+  </div>
+</div>
+
+<!-- CSS for wave animation -->
+<style>
+.audio-wave {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  height: 40px;
+  gap: 4px;
+  margin-bottom: 10px;
+}
+
+.audio-wave .wave {
+  width: 4px;
+  height: 100%;
+  background: #007bff;
+  animation: wave 1s infinite ease-in-out;
+}
+
+.audio-wave .wave:nth-child(1) { animation-delay: 0s; }
+.audio-wave .wave:nth-child(2) { animation-delay: 0.2s; }
+.audio-wave .wave:nth-child(3) { animation-delay: 0.4s; }
+.audio-wave .wave:nth-child(4) { animation-delay: 0.6s; }
+.audio-wave .wave:nth-child(5) { animation-delay: 0.8s; }
+
+@keyframes wave {
+  0%, 100% { transform: scaleY(0.3); }
+  50% { transform: scaleY(1); }
+}
+</style>
+
+
+<script>
+  // Set default volume using JavaScript (0.5 = 50%)
+  const audio2 = document.getElementById('audio3');
+  if(audio2) {
+    audio2.volume = 0.5;
+  }
+</script>
+
+
+      <!-- Sounds Item 3 -->
+<div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+  <div class="service-item position-relative p-3 bg-light rounded shadow-sm text-center">
+    <!-- Sound Icon -->
+    <div class="icon mb-2">
+      <i class="bi bi-music-note-beamed fs-2"></i>
+    </div>
+    <h3>Middle Arabic</h3>
+
+    <!-- Wave animation instead of paragraph -->
+    <div class="audio-wave mt-2 mb-2">
+      <div class="wave"></div>
+      <div class="wave"></div>
+      <div class="wave"></div>
+      <div class="wave"></div>
+      <div class="wave"></div>
+    </div>
+
+    <!-- Audio Player -->
+    <audio id="audio3" controls>
+      <source src="assets/sounds/lementary-Video.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+  </div>
+</div>
+
+<!-- CSS for wave animation -->
+<style>
+.audio-wave {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  height: 40px;
+  gap: 4px;
+  margin-bottom: 10px;
+}
+
+.audio-wave .wave {
+  width: 4px;
+  height: 100%;
+  background: #007bff;
+  animation: wave 1s infinite ease-in-out;
+}
+
+.audio-wave .wave:nth-child(1) { animation-delay: 0s; }
+.audio-wave .wave:nth-child(2) { animation-delay: 0.2s; }
+.audio-wave .wave:nth-child(3) { animation-delay: 0.4s; }
+.audio-wave .wave:nth-child(4) { animation-delay: 0.6s; }
+.audio-wave .wave:nth-child(5) { animation-delay: 0.8s; }
+
+@keyframes wave {
+  0%, 100% { transform: scaleY(0.3); }
+  50% { transform: scaleY(1); }
+}
+</style>
+
+
+<script>
+  // Set default volume using JavaScript (0.5 = 50%)
+  const audio3 = document.getElementById('audio');
+  if(audio3) {
+    audio2.volume = 0.5;
+  }
+</script>
+     <!-- Sounds Item 4 -->
+      <!-- Sounds Section -->
+<section id="sounds-section" class="py-5">
+  <div class="container">
+    <div class="row gy-4">
+
+      <!-- Sound Item 1 -->
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100"> 
+        <div class="service-item position-relative p-3 bg-light rounded shadow-sm text-center">
+          <!-- Sound Icon -->
+          <div class="icon mb-2">
+            <i class="bi bi-music-note-beamed fs-2"></i>
+          </div>
+          <h3>Middle English</h3>
+
+          <!-- Wave animation -->
+          <div class="audio-wave mt-2 mb-2">
+            <div class="wave"></div>
+            <div class="wave"></div>
+            <div class="wave"></div>
+            <div class="wave"></div>
+            <div class="wave"></div>
+          </div>
+
+          <!-- Audio Player -->
+          <audio id="audio1" controls>
+            <source src="assets/sounds/lementary-Video.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+          </audio>
+        </div>
+      </div>
+
+      <!-- Sound Item 2 -->
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200"> 
+        <div class="service-item position-relative p-3 bg-light rounded shadow-sm text-center">
+          <div class="icon mb-2">
+            <i class="bi bi-music-note-beamed fs-2"></i>
+          </div>
+          <h3>Hihg Arabic</h3>
+
+          <div class="audio-wave mt-2 mb-2">
+            <div class="wave"></div>
+            <div class="wave"></div>
+            <div class="wave"></div>
+            <div class="wave"></div>
+            <div class="wave"></div>
+          </div>
+
+          <audio id="audio2" controls>
+            <source src="assets/sounds/lementary-Video.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+          </audio>
+        </div>
+      </div>
+
+      <!-- Sound Item 3 -->
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300"> 
+        <div class="service-item position-relative p-3 bg-light rounded shadow-sm text-center">
+          <div class="icon mb-2">
+            <i class="bi bi-music-note-beamed fs-2"></i>
+          </div>
+          <h3>high English</h3>
+
+          <div class="audio-wave mt-2 mb-2">
+            <div class="wave"></div>
+            <div class="wave"></div>
+            <div class="wave"></div>
+            <div class="wave"></div>
+            <div class="wave"></div>
+          </div>
+
+          <audio id="audio3" controls>
+            <source src="assets/sounds/lementary-Video.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+          </audio>
+        </div>
+      </div>
+
+</section>
+
+<!-- CSS for Wave Animation -->
+<style>
+.audio-wave {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  height: 40px;
+  gap: 4px;
+  margin-bottom: 10px;
+}
+.audio-wave .wave {
+  width: 4px;
+  height: 100%;
+  background: #007bff;
+  animation: wave 1s infinite ease-in-out;
+}
+.audio-wave .wave:nth-child(1) { animation-delay: 0s; }
+.audio-wave .wave:nth-child(2) { animation-delay: 0.2s; }
+.audio-wave .wave:nth-child(3) { animation-delay: 0.4s; }
+.audio-wave .wave:nth-child(4) { animation-delay: 0.6s; }
+.audio-wave .wave:nth-child(5) { animation-delay: 0.8s; }
+
+@keyframes wave {
+  0%, 100% { transform: scaleY(0.3); }
+  50% { transform: scaleY(1); }
+}
+</style>
+
+<!-- JS to Set Default Volume -->
+<script>
+for (let i = 1; i <= 6; i++) {
+  const audio = document.getElementById(`audio${i}`);
+  if (audio) audio.volume = 0.5;
+}
+</script>
+
+<!-- End Book section -->
+<!-- End Games section -->
+
+      <!-- Contact Section -->
+      <section id="contact" class="contact section">
+  <!-- Section Title -->
+  <div class="container section-title" data-aos="fade-up">
+    <h2>Contact</h2>
+    <div>
+      <span>Need Help?</span>
+      <span class="description-title">Contact Us</span>
+    </div>
+  </div>
+  <!-- End Section Title -->
+
+  <div class="container" data-aos="fade" data-aos-delay="100">
+    <div class="row gy-4">
+      <div class="col-lg-4">
+        <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="200">
+          <i class="bi bi-geo-alt flex-shrink-0"></i>
+          <div>
+            <h3>Address</h3>
+            <p>P.O. Box of 745 and a postal code of 320</p>
+          </div>
+        </div>
+
+        <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
+          <i class="bi bi-telephone flex-shrink-0"></i>
+          <div>
+            <h3>Call Us</h3>
+            <p>91116996</p>
+          </div>
+        </div>
+
+        <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
+          <i class="bi bi-envelope flex-shrink-0"></i>
+          <div>
+            <h3>Email Us</h3>
+            <p>info@altakween.om</p>
           </div>
         </div>
       </div>
 
-      <!-- Tab 2 -->
-      <div class="tab-pane fade" id="tab2" role="tabpanel" aria-labelledby="tab2-tab">
-        <div style="width: 100%;">
-          <div style="position: relative; padding-bottom: 56.25%; padding-top: 0; height: 0;">
-            <iframe title="Galaxy Quiz" frameborder="0" width="1200" height="675" 
-                    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" 
-                    src="https://view.genially.com/68e1504cb3cda70d0af00fba" type="text/html" 
-                    allowscriptaccess="always" allowfullscreen="true" scrolling="yes" allownetworking="all">
-            </iframe>
+      <div class="col-lg-8">
+        <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
+          <div class="row gy-4">
+            <div class="col-md-6">
+              <input type="text" name="name" class="form-control" placeholder="Your Name" required />
+            </div>
+
+            <div class="col-md-6">
+              <input type="email" name="email" class="form-control" placeholder="Your Email" required />
+            </div>
+
+            <div class="col-md-12">
+              <input type="text" name="subject" class="form-control" placeholder="Subject" required />
+            </div>
+
+            <div class="col-md-12">
+              <textarea name="message" class="form-control" rows="6" placeholder="Message" required></textarea>
+            </div>
+
+            <div class="col-md-12 text-center">
+              <div class="loading">Loading</div>
+              <div class="error-message"></div>
+              <div class="sent-message">Your message has been sent. Thank you!</div>
+              <button type="submit">Send Message</button>
+            </div>
           </div>
-        </div>
+        </form>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Include Bootstrap JS (required for tabs) -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-<!-- /Features Section -->
+            <!-- End Contact Form -->
+        
+    </main>
 
-
-<script>
-  function showBook(type) {
-    document.getElementById("book-elementary").style.display = (type === 'elementary') ? 'block' : 'none';
-    document.getElementById("book-word").style.display = (type === 'word') ? 'block' : 'none';
-  }
-</script>
-
-
-    <!-- Pricing Section -->
-    <section id="pricing" class="pricing section">
-
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Pricing</h2>
-        <div><span>Check Our</span> <span class="description-title">Pricing</span></div>
-      </div><!-- End Section Title -->
-
+    <footer id="footer" class="footer light-background">
       <div class="container">
-
-        <div class="row gy-4">
-
-          <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="100">
-            <div class="pricing-tem">
-              <h3 style="color: #20c997;">Free Plan</h3>
-              <div class="price"><sup>$</sup>0<span> / mo</span></div>
-              <div class="icon">
-                <i class="bi bi-box" style="color: #20c997;"></i>
-              </div>
-              <ul>
-                <li>Aida dere</li>
-                <li>Nec feugiat nisl</li>
-                <li>Nulla at volutpat dola</li>
-                <li class="na">Pharetra massa</li>
-                <li class="na">Massa ultricies mi</li>
-              </ul>
-              <a href="#" class="btn-buy">Buy Now</a>
-            </div>
-          </div><!-- End Pricing Item -->
-
-          <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="200">
-            <div class="pricing-tem">
-              <span class="featured">Featured</span>
-              <h3 style="color: #0dcaf0;">Starter Plan</h3>
-              <div class="price"><sup>$</sup>19<span> / mo</span></div>
-              <div class="icon">
-                <i class="bi bi-send" style="color: #0dcaf0;"></i>
-              </div>
-              <ul>
-                <li>Aida dere</li>
-                <li>Nec feugiat nisl</li>
-                <li>Nulla at volutpat dola</li>
-                <li>Pharetra massa</li>
-                <li class="na">Massa ultricies mi</li>
-              </ul>
-              <a href="#" class="btn-buy">Buy Now</a>
-            </div>
-          </div><!-- End Pricing Item -->
-
-          <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="300">
-            <div class="pricing-tem">
-              <h3 style="color: #fd7e14;">Business Plan</h3>
-              <div class="price"><sup>$</sup>29<span> / mo</span></div>
-              <div class="icon">
-                <i class="bi bi-airplane" style="color: #fd7e14;"></i>
-              </div>
-              <ul>
-                <li>Aida dere</li>
-                <li>Nec feugiat nisl</li>
-                <li>Nulla at volutpat dola</li>
-                <li>Pharetra massa</li>
-                <li>Massa ultricies mi</li>
-              </ul>
-              <a href="#" class="btn-buy">Buy Now</a>
-            </div>
-          </div><!-- End Pricing Item -->
-
-          <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="400">
-            <div class="pricing-tem">
-              <h3 style="color: #0d6efd;">Ultimate Plan</h3>
-              <div class="price"><sup>$</sup>49<span> / mo</span></div>
-              <div class="icon">
-                <i class="bi bi-rocket" style="color: #0d6efd;"></i>
-              </div>
-              <ul>
-                <li>Aida dere</li>
-                <li>Nec feugiat nisl</li>
-                <li>Nulla at volutpat dola</li>
-                <li>Pharetra massa</li>
-                <li>Massa ultricies mi</li>
-              </ul>
-              <a href="#" class="btn-buy">Buy Now</a>
-            </div>
-          </div><!-- End Pricing Item -->
-
-        </div><!-- End pricing row -->
-
-      </div>
-
-    </section><!-- /Pricing Section -->
-
-    <!-- Faq Section -->
-    <section id="faq" class="faq section light-background">
-
-      <div class="container">
-
-        <div class="row gy-4">
-
-          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
-            <div class="content px-xl-5">
-              <h3><span>Frequently Asked </span><strong>Questions</strong></h3>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit
-              </p>
-            </div>
-          </div>
-
-          <div class="col-lg-8" data-aos="fade-up" data-aos-delay="200">
-
-            <div class="faq-container">
-              
-              <!-- GOES X-ray flux button (drop into any page) -->
-<div style="font-family:system-ui,Segoe UI,Roboto,Arial;max-width:420px;margin:1rem;">
-  <button id="xray-btn" aria-live="polite" title="GOES X-ray flux (1-8 Å)">
-    Loading GOES X-ray...
-  </button>
-  <div id="xray-note" style="font-size:0.85rem;margin-top:.5rem;color:#555;">
-    Source: NOAA / SWPC
-  </div>
-</div>
-
-<style>
-  #xray-btn{
-    padding:.6rem 1rem;
-    border-radius:.5rem;
-    border:1px solid rgba(0,0,0,.08);
-    font-weight:600;
-    cursor:pointer;
-    box-shadow:0 6px 18px rgba(0,0,0,.06);
-    transition: background .18s, color .18s, transform .06s;
-  }
-  #xray-btn:active{ transform: translateY(1px); }
-
-  /* color states */
-  .xray-quiet{ background:#e6f9ef; color:#04683b; }   /* A/B (quiet) */
-  .xray-c{     background:#e7f0ff; color:#1b4fd8; }   /* C */
-  .xray-m{     background:#fff4e6; color:#b35400; }   /* M */
-  .xray-x{     background:#ffeeee; color:#a80000; }   /* X */
-  .xray-unknown{background:#f3f4f6;color:#111827;}    /* unknown / error */
-</style>
-
-<script>
-(function () {
-  // URL to SWPC JSON (primary GOES products)
-  const API = 'https://services.swpc.noaa.gov/json/goes/primary/xrays-1-day.json';
-  const btn = document.getElementById('xray-btn');
-  const note = document.getElementById('xray-note');
-
-  // NOAA flare classification thresholds (W/m^2)
-  const classes = [
-    {name: 'A/B (quiet)', max: 1e-6, css: 'xray-quiet'}, // < 1e-6 -> A/B
-    {name: 'C',          max: 1e-5, css: 'xray-c'},     // 1e-6 ≤ flux < 1e-5 -> C
-    {name: 'M',          max: 1e-4, css: 'xray-m'},     // 1e-5 ≤ flux < 1e-4 -> M
-    {name: 'X',          max: Infinity, css: 'xray-x'}  // ≥ 1e-4 -> X
-  ];
-
-  // Clear existing classes from button
-  function setStateClass(cls) {
-    btn.classList.remove('xray-quiet','xray-c','xray-m','xray-x','xray-unknown');
-    btn.classList.add(cls);
-  }
-
-  // Determine flare class for a numeric flux (W/m^2)
-  function classifyFlux(flux) {
-    if (Number.isFinite(flux) === false) return {label: 'Unknown', css: 'xray-unknown'};
-    for (const c of classes) {
-      if (flux < c.max) return {label: c.name, css: c.css};
-    }
-    return {label: 'Unknown', css: 'xray-unknown'};
-  }
-
-  // Try to extract the long-channel 1-8A flux from an item
-  function extractLongFlux(item) {
-    // SWPC JSON commonly uses xrsb / xrsb_watts or 'flux' fields.
-    const candidates = [
-      item && item.xrsb,          // common: xrsb
-      item && item.xrs_b,         // alternate name
-      item && item['xrsb_watts'], // some formats
-      item && item.flux,         // fallback
-      item && item.value          // generic fallback
-    ];
-    for (const val of candidates) {
-      if (val !== undefined && val !== null) {
-        const n = Number(val);
-        if (!isNaN(n)) return n;
-      }
-    }
-    return NaN;
-  }
-
-  // Fetch latest datapoint and update button
-  async function updateOnce() {
-    try {
-      btn.textContent = 'Fetching GOES X-ray…';
-      btn.title = 'Fetching GOES X-ray (1-8 Å) from SWPC';
-      const res = await fetch(API, {cache: 'no-store'});
-      if (!res.ok) throw new Error('Fetch error: ' + res.status);
-      const data = await res.json();
-
-      // data is often an array of objects sorted ascending by time
-      const last = Array.isArray(data) && data.length ? data[data.length-1] : null;
-      const flux = last ? extractLongFlux(last) : NaN;
-
-      if (!isFinite(flux)) {
-        btn.textContent = 'X-ray: data unavailable';
-        setStateClass('xray-unknown');
-        note.textContent = 'Unable to read flux from SWPC JSON — structure may differ.';
-        return;
-      }
-
-      // classify & show
-      const cls = classifyFlux(flux);
-      btn.textContent = `X-ray ${flux.toExponential(2)} W/m² • ${cls.label}`;
-      btn.title = `Latest GOES 1–8 Å flux: ${flux} W/m² (${cls.label})`;
-      setStateClass(cls.css);
-      note.textContent = `Source: NOAA / SWPC — last datapoint checked.`;
-    } catch (err) {
-      console.error('GOES fetch error', err);
-      btn.textContent = 'X-ray: error';
-      setStateClass('xray-unknown');
-      note.textContent = 'Error fetching GOES data. See console for details.';
-    }
-  }
-
-  // Start: update now, then every 60 seconds
-  updateOnce();
-  const POLL_MS = 60_000; // 1 minute
-  const timer = setInterval(updateOnce, POLL_MS);
-
-  // Optional: stop polling when page hidden to save requests
-  document.addEventListener('visibilitychange', () => {
-    if (document.hidden) {
-      clearInterval(timer);
-    }
-  });
-})();
-</script>
-    
-
-<!-- GOES X-ray flux button (drop into any page) --> 
-<div style="font-family:system-ui,Segoe UI,Roboto,Arial;max-width:420px;margin:1rem;">
-  <button id="xray-btn" aria-live="polite" title="GOES X-ray flux (1-8 Å)">
-    Loading GOES X-ray...
-  </button>
-  <div id="xray-note" style="font-size:0.85rem;margin-top:.5rem;color:#555;">
-    Source: NOAA / SWPC
-  </div>
-
-  <!-- Extra Space Weather Facts -->
-  <div id="space-weather" style="margin-top:1rem;padding:0.5rem;border:1px solid #ccc;border-radius:6px;background:#fafafa;">
-    <strong>Space Weather Facts:</strong>
-    <div id="space-weather-data" style="font-size:0.9rem;color:#333;margin-top:.5rem;">
-      Loading latest CME / geomagnetic updates...
-    </div>
-  </div>
-</div>
-
-<style>
-  #xray-btn{
-    padding:.6rem 1rem;
-    border-radius:.5rem;
-    border:1px solid rgba(0,0,0,.08);
-    font-weight:600;
-    cursor:pointer;
-    box-shadow:0 6px 18px rgba(0,0,0,.06);
-    transition: background .18s, color .18s, transform .06s;
-  }
-  #xray-btn:active{ transform: translateY(1px); }
-
-  /* color states */
-  .xray-quiet{ background:#e6f9ef; color:#04683b; }   /* A/B (quiet) */
-  .xray-c{     background:#e7f0ff; color:#1b4fd8; }   /* C */
-  .xray-m{     background:#fff4e6; color:#b35400; }   /* M */
-  .xray-x{     background:#ffeeee; color:#a80000; }   /* X */
-  .xray-unknown{background:#f3f4f6;color:#111827;}    /* unknown / error */
-</style>
-
-<script>
-(function () {
-  const API_XRAY = 'https://services.swpc.noaa.gov/json/goes/primary/xrays-1-day.json';
-  const API_GEO = 'https://services.swpc.noaa.gov/json/planetary_k_index_1m.json'; // Geomagnetic Kp Index
-  const btn = document.getElementById('xray-btn');
-  const note = document.getElementById('xray-note');
-  const spaceWeatherBox = document.getElementById('space-weather-data');
-
-  const classes = [
-    {name: 'A/B (quiet)', max: 1e-6, css: 'xray-quiet'},
-    {name: 'C',          max: 1e-5, css: 'xray-c'},
-    {name: 'M',          max: 1e-4, css: 'xray-m'},
-    {name: 'X',          max: Infinity, css: 'xray-x'}
-  ];
-
-  function setStateClass(cls) {
-    btn.classList.remove('xray-quiet','xray-c','xray-m','xray-x','xray-unknown');
-    btn.classList.add(cls);
-  }
-
-  function classifyFlux(flux) {
-    if (!Number.isFinite(flux)) return {label: 'Unknown', css: 'xray-unknown'};
-    for (const c of classes) {
-      if (flux < c.max) return {label: c.name, css: c.css};
-    }
-    return {label: 'Unknown', css: 'xray-unknown'};
-  }
-
-  function extractLongFlux(item) {
-    const candidates = [item?.xrsb, item?.xrs_b, item?.xrsb_watts, item?.flux, item?.value];
-    for (const val of candidates) {
-      if (val !== undefined && val !== null) {
-        const n = Number(val);
-        if (!isNaN(n)) return n;
-      }
-    }
-    return NaN;
-  }
-
-  async function updateXray() {
-    try {
-      btn.textContent = 'Fetching GOES X-ray…';
-      const res = await fetch(API_XRAY, {cache: 'no-store'});
-      const data = await res.json();
-      const last = data[data.length-1];
-      const flux = extractLongFlux(last);
-
-      if (!isFinite(flux)) {
-        btn.textContent = 'X-ray: data unavailable';
-        setStateClass('xray-unknown');
-        note.textContent = 'Unable to read flux from SWPC JSON.';
-        return;
-      }
-      const cls = classifyFlux(flux);
-      btn.textContent = `X-ray ${flux.toExponential(2)} W/m² • ${cls.label}`;
-      setStateClass(cls.css);
-      note.textContent = `Source: NOAA / SWPC — last datapoint checked.`;
-    } catch (err) {
-      btn.textContent = 'X-ray: error';
-      setStateClass('xray-unknown');
-      note.textContent = 'Error fetching GOES data.';
-    }
-  }
-
-  async function updateGeomagnetic() {
-    try {
-      const res = await fetch(API_GEO, {cache: 'no-store'});
-      const data = await res.json();
-      const last = data[data.length-1];
-      const kp = last.kp_index;
-      const time = last.time_tag;
-
-      let status = 'Quiet';
-      if (kp >= 5) status = 'Minor Storm (G1)';
-      if (kp >= 6) status = 'Moderate Storm (G2)';
-      if (kp >= 7) status = 'Strong Storm (G3)';
-      if (kp >= 8) status = 'Severe Storm (G4)';
-      if (kp >= 9) status = 'Extreme Storm (G5)';
-
-      spaceWeatherBox.innerHTML = `
-        <p><strong>Geomagnetic activity:</strong> Kp ${kp} — ${status}</p>
-        <p><em>Last updated:</em> ${time}</p>
-      `;
-    } catch (err) {
-      spaceWeatherBox.textContent = 'Unable to fetch geomagnetic activity.';
-    }
-  }
-
-  updateXray();
-  updateGeomagnetic();
-  setInterval(updateXray, 60000);
-  setInterval(updateGeomagnetic, 60000);
-})();
-</script>
-
-              <div class="faq-item">
-                <h3><span class="num">2.</span> <span>Feugiat scelerisque varius morbi enim nunc faucibus a pellentesque?</span></h3>
-                <div class="faq-content">
-                  <p>Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est pellentesque elit ullamcorper dignissim. Mauris ultrices eros in cursus turpis massa tincidunt dui.</p>
-                </div>
-                <i class="faq-toggle bi bi-chevron-right"></i>
-              </div><!-- End Faq item-->
-
-              <div class="faq-item">
-                <h3><span class="num">3.</span> <span>Dolor sit amet consectetur adipiscing elit pellentesque?</span></h3>
-                <div class="faq-content">
-                  <p>Eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis orci. Faucibus pulvinar elementum integer enim. Sem nulla pharetra diam sit amet nisl suscipit. Rutrum tellus pellentesque eu tincidunt. Lectus urna duis convallis convallis tellus. Urna molestie at elementum eu facilisis sed odio morbi quis</p>
-                </div>
-                <i class="faq-toggle bi bi-chevron-right"></i>
-              </div><!-- End Faq item-->
-
-              <div class="faq-item">
-                <h3><span class="num">4.</span> <span>Ac odio tempor orci dapibus. Aliquam eleifend mi in nulla?</span></h3>
-                <div class="faq-content">
-                  <p>Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est pellentesque elit ullamcorper dignissim. Mauris ultrices eros in cursus turpis massa tincidunt dui.</p>
-                </div>
-                <i class="faq-toggle bi bi-chevron-right"></i>
-              </div><!-- End Faq item-->
-
-              <div class="faq-item">
-                <h3><span class="num">5.</span> <span>Tempus quam pellentesque nec nam aliquam sem et tortor consequat?</span></h3>
-                <div class="faq-content">
-                  <p>Molestie a iaculis at erat pellentesque adipiscing commodo. Dignissim suspendisse in est ante in. Nunc vel risus commodo viverra maecenas accumsan. Sit amet nisl suscipit adipiscing bibendum est. Purus gravida quis blandit turpis cursus in</p>
-                </div>
-                <i class="faq-toggle bi bi-chevron-right"></i>
-              </div><!-- End Faq item-->
-
-            </div>
-
-          </div>
+        <div class="copyright text-center">
+          <p>
+            © <span>Copyright</span>
+            <strong class="px-1 sitename">Flara</strong>
+            <span>All Rights Reserved</span>
+          </p>
         </div>
-
-      </div>
-
-    </section><!-- /Faq Section -->
-
-
-    
-    <section id="geomag-section" style="max-width:500px;margin:2rem auto;font-family:system-ui,Segoe UI,Roboto,Arial;padding:1rem;border-radius:10px;text-align:center;">
-  <h2 style="margin-bottom:1rem;">Geomagnetic Activity</h2>
-  <p>
-    <a href="https://www.spaceweatherlive.com/en/solar-activity/geomagnetic-activity.html" 
-       id="geomag-link" 
-       target="_blank" 
-       rel="noopener noreferrer"
-       style="text-decoration:underline;font-weight:bold;">
-       Current Geomagnetic Activity
-    </a>
-  </p>
-</section>
-
-<script>
-  const geomagSection = document.getElementById('geomag-section');
-
-  // Example geomagnetic activity string
-  const geomagData = "09:45 UTC - Geomagnetic activity Minor G1 geomagnetic storm (Kp5) Threshold Reached: 08:36 UTC";
-
-  function updateGeomagBackground(data) {
-    // Define background colors for each activity level
-    const colors = {
-      'quiet': '#2ecc71',       // green
-      'minor': '#f1c40f',       // yellow
-      'moderate': '#e67e22',    // orange
-      'severe': '#e74c3c'       // red
-    };
-
-    data = data.toLowerCase();
-
-    let color = colors['quiet']; // default green
-
-    if (data.includes('minor') || data.includes('g1')) color = colors['minor'];
-    if (data.includes('moderate') || data.includes('g2')) color = colors['moderate'];
-    if (data.includes('strong') || data.includes('severe') || data.includes('g3') || data.includes('g4') || data.includes('g5')) color = colors['severe'];
-
-    geomagSection.style.backgroundColor = color;
-  }
-
-  // Initial background update
-  updateGeomagBackground(geomagData);
-
-  // Optional: update every hour
-  setInterval(() => {
-    // Replace geomagData with live data fetch if available
-    updateGeomagBackground(geomagData);
-  }, 3600000); // every 1 hour
-</script>
-
-
-
-
-    
-    <!-- Contact Section -->
-    <section id="contact" class="contact section">
-
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Contact</h2>
-        <div><span>Need Help?</span> <span class="description-title">Contact Us</span></div>
-      </div><!-- End Section Title -->
-
-      <div class="container" data-aos="fade" data-aos-delay="100">
-
-        <div class="row gy-4">
-
-          <div class="col-lg-4">
-            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="200">
-              <i class="bi bi-geo-alt flex-shrink-0"></i>
-              <div>
-                <h3>Address</h3>
-                <p>A108 Adam Street, New York, NY 535022</p>
-              </div>
-            </div><!-- End Info Item -->
-
-            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
-              <i class="bi bi-telephone flex-shrink-0"></i>
-              <div>
-                <h3>Call Us</h3>
-                <p>+1 5589 55488 55</p>
-              </div>
-            </div><!-- End Info Item -->
-
-            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
-              <i class="bi bi-envelope flex-shrink-0"></i>
-              <div>
-                <h3>Email Us</h3>
-                <p>info@example.com</p>
-              </div>
-            </div><!-- End Info Item -->
-
-          </div>
-
-          <div class="col-lg-8">
-            <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
-              <div class="row gy-4">
-
-                <div class="col-md-6">
-                  <input type="text" name="name" class="form-control" placeholder="Your Name" required="">
-                </div>
-
-                <div class="col-md-6 ">
-                  <input type="email" class="form-control" name="email" placeholder="Your Email" required="">
-                </div>
-
-                <div class="col-md-12">
-                  <input type="text" class="form-control" name="subject" placeholder="Subject" required="">
-                </div>
-
-                <div class="col-md-12">
-                  <textarea class="form-control" name="message" rows="6" placeholder="Message" required=""></textarea>
-                </div>
-
-                <div class="col-md-12 text-center">
-                  <div class="loading">Loading</div>
-                  <div class="error-message"></div>
-                  <div class="sent-message">Your message has been sent. Thank you!</div>
-
-                  <button type="submit">Send Message</button>
-                </div>
-
-              </div>
-            </form>
-          </div><!-- End Contact Form -->
-
+        <div class="social-links d-flex justify-content-center">
+          <a href=""><i class="bi bi-twitter-x"></i></a>
+          <a href=""><i class="bi bi-facebook"></i></a>
+          <a href=""><i class="bi bi-instagram"></i></a>
+          <a href=""><i class="bi bi-linkedin"></i></a>
         </div>
-
+        <div class="credits">
+          <!-- All the links in the footer should remain intact. -->
+          <!-- You can delete the links only if you've purchased the pro version. -->
+          <!-- Licensing information: https://bootstrapmade.com/license/ -->
+          <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
+        </div>
       </div>
+    </footer>
 
-    </section><!-- /Contact Section -->
+    <!-- Scroll Top -->
+    <a
+      href="#"
+      id="scroll-top"
+      class="scroll-top d-flex align-items-center justify-content-center"
+      ><i class="bi bi-arrow-up-short"></i
+    ></a>
 
-  </main>
+    <!-- Preloader -->
+    <div id="preloader"></div>
 
-  <footer id="footer" class="footer light-background">
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/php-email-form/validate.js"></script>
+    <script src="assets/vendor/aos/aos.js"></script>
+    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
 
-    <div class="container">
-      <div class="copyright text-center ">
-        <p>© <span>Copyright</span> <strong class="px-1 sitename">Flara</strong> <span>All Rights Reserved</span></p>
-      </div>
-      <div class="social-links d-flex justify-content-center">
-        <a href=""><i class="bi bi-twitter-x"></i></a>
-        <a href=""><i class="bi bi-facebook"></i></a>
-        <a href=""><i class="bi bi-instagram"></i></a>
-        <a href=""><i class="bi bi-linkedin"></i></a>
-      </div>
-      <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you've purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
-      </div>
-    </div>
-
-  </footer>
-
-  <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
-  <!-- Preloader -->
-  <div id="preloader"></div>
-
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-
-  <!-- Main JS File -->
-  <script src="assets/js/main.js"></script>
-
-</body>
-
+    <!-- Main JS File -->
+    <script src="assets/js/main.js"></script>
+  </body>
 </html>

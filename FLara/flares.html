@@ -1,0 +1,159 @@
+<section id="interactive-factors" class="py-5" style="display:flex; font-family:Arial, sans-serif;"> 
+  <!-- Sidebar for Factor Buttons -->
+  <div id="factor-sidebar" class="d-flex flex-column gap-3 me-4" style="min-width:250px;">
+    <div class="factor-item d-flex justify-content-between align-items-center">
+      <button class="factor-btn" data-factor="solar">Solar Activity</button>
+      <span class="factor-percent">90%</span>
+    </div>
+    <div class="factor-item d-flex justify-content-between align-items-center">
+      <button class="factor-btn" data-factor="geomagnetic">Geomagnetic Activity</button>
+      <span class="factor-percent">70%</span>
+    </div>
+    <div class="factor-item d-flex justify-content-between align-items-center">
+      <button class="factor-btn" data-factor="gps">GPS & Satellites</button>
+      <span class="factor-percent">50%</span>
+    </div>
+    <div class="factor-item d-flex justify-content-between align-items-center">
+      <button class="factor-btn" data-factor="aurora">Auroras</button>
+      <span class="factor-percent">30%</span>
+    </div>
+  </div>
+
+  <!-- Main Visual Area -->
+  <div id="factor-main" class="position-relative flex-grow-1" style="height:500px; border-radius:15px; overflow:hidden; background:none;">
+    <!-- Background layer -->
+    <div id="background-layer" class="position-absolute w-100 h-100" style="top:0; left:0; transition: background-color 1s;"></div>
+
+    <!-- Top-left group: mini icons -->
+    <div id="top-left-group" class="position-absolute" style="top:15px; left:15px; display:flex; align-items:center; gap:8px;">
+      <div id="mini-icons" class="d-flex gap-2"></div>
+    </div>
+
+    <!-- Flara character -->
+    <!-- Flara character -->
+<div id="flara" class="position-absolute" style="
+  width:120px; 
+  height:120px; 
+  border-radius:50%; 
+  background:orange;
+  top:0; 
+  left:0; 
+  transform:translate(0, 0); 
+  transition: all 0.5s;">
+</div>
+
+
+    <!-- Impact icon under Flara -->
+    <div id="impact-icon" style="
+      position:absolute; top:100px; left:80px; font-size:2rem; text-align:center; transition: all 0.5s; animation: bounce 1s infinite alternate;">
+    </div>
+
+    <!-- Shining light behind Flara -->
+    <div id="flara-light" class="position-absolute"></div>
+  </div>
+</section>
+
+<style>
+body { transition: background-color 1s; font-family: Arial, sans-serif; }
+
+.factor-btn {
+  border: none; padding: 12px 20px; border-radius: 12px; color: white; font-weight: 600; cursor: pointer;
+  transition: all 0.3s ease; text-align: left; box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+.factor-btn:hover { transform: scale(1.05); box-shadow: 0 4px 12px rgba(0,0,0,0.3); }
+.factor-btn.active { border: 2px solid black; }
+
+.factor-percent {
+  font-weight:bold; margin-left:8px; color:#111; min-width:35px; text-align:right;
+}
+
+#flara-light { position:absolute; top:50%; left:50%; transform:translate(-50%, -50%); border-radius:50%; animation: pulse 2s infinite alternate; }
+
+@keyframes pulse {
+  0% { transform:translate(-50%, -50%) scale(1); opacity:0.5; }
+  50% { transform:translate(-50%, -50%) scale(1.1); opacity:0.7; }
+  100% { transform:translate(-50%, -50%) scale(1.2); opacity:0.9; }
+}
+
+@keyframes bounce {
+  0% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(-10px); }
+  100% { transform: translateX(-50%) translateY(0); }
+}
+
+.mini-icon { font-size:1.2rem; animation: float 2s ease-in-out infinite alternate; }
+@keyframes float { 0% { transform: translateY(0); } 50% { transform: translateY(-5px); } 100% { transform: translateY(0); } }
+</style>
+
+<script>
+const factors = {
+  solar: { bgColor:"#e63946", flaraGlow:"drop-shadow(0 0 20px red)", lightColor:"rgba(230,57,70,0.6)", lightSize:"450px", percent:90 },
+  geomagnetic: { bgColor:"#f4a261", flaraGlow:"drop-shadow(0 0 15px orange)", lightColor:"rgba(244,162,97,0.5)", lightSize:"350px", percent:70 },
+  gps: { bgColor:"#a8dadc", flaraGlow:"drop-shadow(0 0 10px transparent)", lightColor:"rgba(168,218,220,0.5)", lightSize:"300px", percent:50 },
+  aurora: { bgColor:"#457b9d", flaraGlow:"drop-shadow(0 0 25px green)", lightColor:"rgba(69,123,157,0.6)", lightSize:"500px", percent:30 }
+};
+
+const factorIcons = {
+  solar: ["🌞","☀️","🔥"],
+  geomagnetic: ["⚡","🌩️","💥"],
+  gps: ["🛰️","📡"], // Removed yellow icon
+  aurora: ["🌌","🌠","✨"]
+};
+
+const factorKeys = Object.keys(factors);
+let currentIndex = 0;
+let autoSwitchInterval;
+
+const buttons = document.querySelectorAll(".factor-btn");
+const percentSpans = document.querySelectorAll(".factor-percent");
+
+buttons.forEach((btn,i) => {
+  const factor = btn.dataset.factor;
+  btn.style.backgroundColor = factors[factor].bgColor;
+  percentSpans[i].textContent = factors[factor].percent + "%";
+  btn.addEventListener("click", () => {
+    clearInterval(autoSwitchInterval);
+    currentIndex = factorKeys.indexOf(factor);
+    switchFactor(factor);
+    startAutoSwitch();
+  });
+});
+
+function switchFactor(factorName){
+  const bg = document.getElementById("background-layer");
+  const flara = document.getElementById("flara");
+  const light = document.getElementById("flara-light");
+  const impactIcon = document.getElementById("impact-icon");
+  const miniIconsContainer = document.getElementById("mini-icons");
+
+  document.body.style.backgroundColor = factors[factorName].bgColor;
+  bg.style.backgroundColor = factors[factorName].bgColor;
+  flara.style.filter = factors[factorName].flaraGlow;
+  light.style.backgroundColor = factors[factorName].lightColor;
+  light.style.width = factors[factorName].lightSize;
+  light.style.height = factors[factorName].lightSize;
+
+  impactIcon.textContent = factorIcons[factorName][0];
+
+  buttons.forEach(b => b.classList.remove("active"));
+  document.querySelector(`.factor-btn[data-factor="${factorName}"]`).classList.add("active");
+
+  miniIconsContainer.innerHTML = "";
+  factorIcons[factorName].forEach(icon => {
+    const span = document.createElement("span");
+    span.classList.add("mini-icon");
+    span.textContent = icon;
+    miniIconsContainer.appendChild(span);
+  });
+}
+
+function startAutoSwitch(){
+  autoSwitchInterval = setInterval(() => {
+    currentIndex = (currentIndex + 1) % factorKeys.length;
+    switchFactor(factorKeys[currentIndex]);
+  }, 4000);
+}
+
+switchFactor(factorKeys[currentIndex]);
+startAutoSwitch();
+</script>
